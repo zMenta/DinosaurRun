@@ -22,3 +22,20 @@ func _physics_process(delta: float) -> void:
 		velocity.y += _gravity * delta
 	else:
 		_can_jump = false
+
+	if Input.is_action_pressed("jump") and _can_jump:
+			velocity.y += JUMP_VELOCITY
+			if velocity.y < MAX_JUMP_VELOCITY:
+				_can_jump = false
+
+	if Input.is_action_just_released("jump"):
+		_can_jump = false
+
+	velocity = move_and_slide(velocity)
+
+
+func death() -> void:
+	# 3.14 radians = 180 degrees
+	rotation = 3.14
+	dead = true
+	emit_signal("died")
