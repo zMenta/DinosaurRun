@@ -6,7 +6,8 @@ signal died
 const JUMP_VELOCITY := -175
 const MAX_JUMP_VELOCITY := -1100
 
-var _gravity : float = 9.8 * 400
+var _gravity : float = 9.8
+var _gravity_multiplier := 400
 var _can_jump := true
 var dead := false
 var velocity := Vector2()
@@ -19,9 +20,9 @@ func _physics_process(delta: float) -> void:
 
 	# Jumping code, the jump will be higher if the jump key be held for longer.
 	if not is_on_floor():
-		velocity.y += _gravity * delta
+		velocity.y += _gravity * _gravity_multiplier * delta
 	else:
-		print("Can jump")
+		_gravity_multiplier = 300
 		_can_jump = true
 
 	if Input.is_action_pressed("jump") and _can_jump:
@@ -30,6 +31,7 @@ func _physics_process(delta: float) -> void:
 				_can_jump = false
 
 	if Input.is_action_just_released("jump"):
+		_gravity_multiplier = 500
 		_can_jump = false
 
 	velocity = move_and_slide(velocity, Vector2.UP)
