@@ -42,3 +42,9 @@ func death() -> void:
 	rotation = 3.14
 	dead = true
 	emit_signal("died")
+
+
+func _on_HitBox_area_entered(area:Area2D) -> void:
+	if area.name == "ObstacleHitbox":
+		# player.death()
+		pass
