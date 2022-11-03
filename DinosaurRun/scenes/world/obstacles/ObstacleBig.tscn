@@ -1,15 +1,5 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes/world/obstacles/MushroomSpriteSheet.png" type="Texture" id=1]
+[ext_resource path="res://scenes/world/obstacles/ObstacleBase.tscn" type="PackedScene" id=1]
 
-[node name="ObstacleBig" type="StaticBody2D"]
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -16.1 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 32, 0, 32, 65 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 0, -16.1 )
-polygon = PoolVector2Array( 5, 16, -4, 16, -8, 10, -5, -5, -8, -7, -8, -17, -2, -27, 7, -27, 13, -17, 13, -8 )
+[node name="ObstacleBig" instance=ExtResource( 1 )]
