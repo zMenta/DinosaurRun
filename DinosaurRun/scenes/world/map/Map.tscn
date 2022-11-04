@@ -9,9 +9,9 @@
 [node name="Paralax" parent="." instance=ExtResource( 2 )]
 position = Vector2( 112, 120 )
 
-[node name="ForeGround" type="Node2D" parent="."]
+[node name="Managers" type="Node2D" parent="."]
 
-[node name="GroundManager" parent="ForeGround" instance=ExtResource( 1 )]
+[node name="GroundManager" parent="Managers" instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 24, 120 )
