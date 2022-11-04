@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/ground/ground/Ground.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://scenes/world/cloud/Cloud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/world/obstacles/ObstacleBig.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/world/obstacles/ObstacleSmall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/world/obstacles/Obstacle.gd" type="Script" id=8]
 [ext_resource path="res://scenes/world/map/assets/Sky2.png" type="Texture" id=9]
 
 [node name="Main" type="Node2D"]
@@ -16,8 +15,6 @@ script = ExtResource( 3 )
 [node name="Sky2" type="Sprite" parent="."]
 position = Vector2( 160, 89 )
 texture = ExtResource( 9 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Ground" parent="." instance=ExtResource( 2 )]
 position = Vector2( 32, 164 )
@@ -63,32 +60,24 @@ position = Vector2( 200, 19 )
 
 [node name="ObstacleBig" parent="." instance=ExtResource( 6 )]
 position = Vector2( 52, 132 )
-script = ExtResource( 8 )
 
 [node name="ObstacleSmall" parent="." instance=ExtResource( 7 )]
 position = Vector2( 239, 137 )
-script = ExtResource( 8 )
 
 [node name="ObstacleBig2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 120, 154 )
-script = ExtResource( 8 )
 
 [node name="ObstacleBig3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 207, 154 )
-script = ExtResource( 8 )
 
 [node name="ObstacleBig4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 153, 71 )
-script = ExtResource( 8 )
 
 [node name="ObstacleSmall2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 284, 57 )
-script = ExtResource( 8 )
 
 [node name="ObstacleSmall3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 196, 102 )
-script = ExtResource( 8 )
 
 [node name="ObstacleSmall4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 292, 102 )
-script = ExtResource( 8 )
