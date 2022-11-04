@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/world/cloud/CloudsSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://scenes/world/SelectRandomSprite.gd" type="Script" id=2]
-[ext_resource path="res://scenes/world/BaseProp.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -20,10 +19,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Cloud" type="Node2D"]
-script = ExtResource( 3 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 3, 3 )
+[node name="Cloud" type="AnimatedSprite"]
 frames = SubResource( 3 )
 script = ExtResource( 2 )

@@ -1,5 +1,5 @@
 extends Node2D
-class_name BaseProp
+class_name EnviromentLayer
 
 export(float) var speed : float = 50
 

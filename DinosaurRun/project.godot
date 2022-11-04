@@ -9,17 +9,17 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node2D",
-"class": "BaseProp",
-"language": "GDScript",
-"path": "res://scenes/world/BaseProp.gd"
-}, {
 "base": "Node",
 "class": "BaseState",
 "language": "GDScript",
 "path": "res://scenes/player/states/BaseState.gd"
 }, {
-"base": "BaseProp",
+"base": "Node2D",
+"class": "EnviromentLayer",
+"language": "GDScript",
+"path": "res://scenes/world/EnviromentLayer.gd"
+}, {
+"base": "Node",
 "class": "Obstacle",
 "language": "GDScript",
 "path": "res://scenes/world/obstacles/Obstacle.gd"
@@ -30,8 +30,8 @@ _global_script_classes=[ {
 "path": "res://scenes/player/Player.gd"
 } ]
 _global_script_class_icons={
-"BaseProp": "",
 "BaseState": "",
+"EnviromentLayer": "",
 "Obstacle": "",
 "Player": ""
 }
@@ -41,6 +41,15 @@ _global_script_class_icons={
 config/name="DinosaurRun"
 run/main_scene="res://main/Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=320
+window/size/height=180
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [gui]
 

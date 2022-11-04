@@ -1,4 +1,4 @@
-extends BaseProp
+extends Node
 class_name Obstacle
 
 onready var sprite := $ObstacleHitbox/Sprite
