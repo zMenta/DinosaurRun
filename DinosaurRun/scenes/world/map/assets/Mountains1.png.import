@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sky.png-c4f23ecb4ecd8cf0f1faf4e13e490473.stex"
+path="res://.import/Mountains1.png-341b663ae168a65dc1d7069ff00b4a9c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/world/map/assets/sky.png"
-dest_files=[ "res://.import/sky.png-c4f23ecb4ecd8cf0f1faf4e13e490473.stex" ]
+source_file="res://scenes/world/map/assets/Mountains1.png"
+dest_files=[ "res://.import/Mountains1.png-341b663ae168a65dc1d7069ff00b4a9c.stex" ]
 
 [params]
 
