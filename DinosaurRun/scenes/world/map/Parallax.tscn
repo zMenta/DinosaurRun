@@ -61,6 +61,7 @@ texture = ExtResource( 3 )
 [node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 320, 0 )
 script = ExtResource( 2 )
+speed = 120.0
 
 [node name="Ground" type="Sprite" parent="ParallaxBackground/Layer4"]
 position = Vector2( 32, 164 )
@@ -85,6 +86,7 @@ texture = ExtResource( 5 )
 [node name="Layer5" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 640, 0 )
 script = ExtResource( 2 )
+speed = 120.0
 
 [node name="Plant2" parent="ParallaxBackground/Layer5" instance=ExtResource( 7 )]
 position = Vector2( 38, 154 )
