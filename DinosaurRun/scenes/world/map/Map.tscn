@@ -12,7 +12,7 @@ extents = Vector2( 161, 8 )
 position = Vector2( 112, 120 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 24, 120 )
+position = Vector2( 24, 158 )
 
 [node name="GroundStaticBody" type="StaticBody2D" parent="."]
 
