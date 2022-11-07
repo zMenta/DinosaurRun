@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/world/props/PropManager.gd" type="Script" id=1]
 [ext_resource path="res://scenes/world/props/cloud/Cloud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/world/props/plants/Plant.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -10,7 +11,11 @@ _data = {
 
 [node name="PropManager" type="Node2D"]
 script = ExtResource( 1 )
+Plant = ExtResource( 3 )
 Cloud = ExtResource( 2 )
+
+[node name="CloudTimer" type="Timer" parent="."]
+autostart = true
 
 [node name="CloudPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -29,3 +34,5 @@ position = Vector2( 328, 170 )
 
 [node name="Position2D3" type="Position2D" parent="PlantPositions"]
 position = Vector2( 328, 165 )
+
+[connection signal="timeout" from="CloudTimer" to="." method="_on_CloudTimer_timeout"]

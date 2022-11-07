@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/world/EnviromentLayer.gd"
 }, {
-"base": "StaticBody2D",
-"class": "Ground",
-"language": "GDScript",
-"path": "res://scenes/world/ground/ground/Ground.gd"
-}, {
 "base": "Node",
 "class": "Obstacle",
 "language": "GDScript",
@@ -37,7 +32,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BaseState": "",
 "EnviromentLayer": "",
-"Ground": "",
 "Obstacle": "",
 "Player": ""
 }
