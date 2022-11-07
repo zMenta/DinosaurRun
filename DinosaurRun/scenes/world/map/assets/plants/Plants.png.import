@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CloudsSpriteSheet.png-6bc40fb3a71fea5a6416f5adb546a3e5.stex"
+path="res://.import/Plants.png-19bef1a0a262086e9e9a9134ffc05726.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/world/props/cloud/CloudsSpriteSheet.png"
-dest_files=[ "res://.import/CloudsSpriteSheet.png-6bc40fb3a71fea5a6416f5adb546a3e5.stex" ]
+source_file="res://scenes/world/map/assets/plants/Plants.png"
+dest_files=[ "res://.import/Plants.png-19bef1a0a262086e9e9a9134ffc05726.stex" ]
 
 [params]
 

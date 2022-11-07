@@ -8,8 +8,3 @@ func _ready() -> void:
 
 	if randi() % 2 == 0:
 		flip_h = true
-
-
-func _on_VisibilityNotifier2D_screen_exited() -> void:
-	# queue_free()
-	pass
