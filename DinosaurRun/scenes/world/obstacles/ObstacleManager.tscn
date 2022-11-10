@@ -16,4 +16,6 @@ position = Vector2( 360, 168 )
 wait_time = 2.5
 autostart = true
 
+[node name="ObstaclesGroup" type="Node2D" parent="."]
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
