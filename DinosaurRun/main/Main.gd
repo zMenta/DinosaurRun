@@ -1,7 +1,7 @@
 extends Node2D
 
 export(float) var speed_increase_vaue := 0.2
-export(float) var obstacle_spawn_rate_increase := 0.002
+export(float) var obstacle_spawn_rate_increase := 0.001
 
 onready var map := $Map
 onready var obstacle_manager := $ObstacleManager
