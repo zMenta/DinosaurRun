@@ -2,7 +2,7 @@ extends Node2D
 
 export(PackedScene) var obstacle_small
 export(PackedScene) var obstacle_big
-export(int) var base_obstacle_speed := 120
+export(float) var base_obstacle_speed := 120.0
 export(float) var min_spawn_time := 1.2
 
 onready var spawn_timer := $SpawnTimer
