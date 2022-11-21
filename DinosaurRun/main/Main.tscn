@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/world/map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/obstacles/ObstacleManager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/Main.gd" type="Script" id=3]
+[ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 24, 158 )
 
 [node name="ObstacleManager" parent="." instance=ExtResource( 2 )]
 
