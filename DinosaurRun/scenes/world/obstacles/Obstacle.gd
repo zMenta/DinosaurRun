@@ -4,6 +4,7 @@ class_name Obstacle
 onready var sprite := $ObstacleHitbox/Sprite
 onready var collisionShape := $ObstacleHitbox/CollisionPolygon2D
 export(float) var speed : float = 50
+export(bool) var is_moving : bool = true
 
 func _ready() -> void:
 	randomize()
@@ -13,6 +14,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if not is_moving:
+		return
+		
 	position.x -= speed * delta
 
 

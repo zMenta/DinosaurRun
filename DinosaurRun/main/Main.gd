@@ -11,3 +11,8 @@ func _on_SpeedIncreaseTimer_timeout():
 	obstacle_manager.increase_spawn_rate(obstacle_spawn_rate_increase)
 	obstacle_manager.increase_obstacles_speed(speed_increase_vaue)
 	map.increase_world_speed(speed_increase_vaue)
+
+
+func _on_Player_died():
+	map.stop_world()
+	obstacle_manager.stop_obstacles()

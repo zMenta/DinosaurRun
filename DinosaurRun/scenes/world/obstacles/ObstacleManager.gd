@@ -11,6 +11,7 @@ onready var obstacles := [obstacle_small, obstacle_big]
 onready var obstacles_group := $ObstaclesGroup
 
 
+
 func increase_spawn_rate(value: float) -> void:
 	if not spawn_timer.wait_time <= 0 and spawn_timer.wait_time >= min_spawn_time:
 		spawn_timer.wait_time -= value
@@ -22,6 +23,18 @@ func increase_obstacles_speed(speed_increase: float) -> void:
 		obstacle.speed = base_obstacle_speed
 
 
+func stop_obstacles() -> void:
+	spawn_timer.stop()
+	for obstacle in obstacles_group.get_children():
+		obstacle.is_moving = false
+		
+
+func start_obstacles() -> void:
+	spawn_timer.start()
+	for obstacle in obstacles_group.get_children():
+		obstacle.is_moving = true
+		
+		
 func _on_SpawnTimer_timeout():
 	randomize()
 	var obstacle = obstacles[randi() % obstacles.size()]

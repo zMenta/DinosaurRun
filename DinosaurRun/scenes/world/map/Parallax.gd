@@ -7,4 +7,15 @@ func increase_layers_speed(speed_increase: float) -> void:
 	for layer in parallax_background.get_children():
 		if layer.get_script() != null:
 			layer.speed += speed_increase
-	
+
+
+func stop_layers() -> void:
+	for layer in parallax_background.get_children():
+		if layer.get_script() != null:
+			layer.is_moving = false
+
+
+func start_layers() -> void:
+	for layer in parallax_background.get_children():
+		if layer.get_script() != null:
+			layer.is_moving = true

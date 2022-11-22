@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/assets/Dino.png" type="Texture" id=2]
 [ext_resource path="res://scenes/player/assets/DinoShadow.png" type="Texture" id=3]
+[ext_resource path="res://scenes/player/PlayerNode.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11.5, 11.5 )
@@ -11,6 +12,7 @@ extents = Vector2( 11.5, 11.5 )
 extents = Vector2( 7, 10.25 )
 
 [node name="Player" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="DinoShadow" type="Sprite" parent="."]
 position = Vector2( 0, -2 )
@@ -37,4 +39,5 @@ modulate = Color( 0.384314, 0, 0.701961, 1 )
 position = Vector2( 1, -1.25 )
 shape = SubResource( 2 )
 
+[connection signal="died" from="Player" to="." method="_on_Player_died"]
 [connection signal="area_entered" from="Player/HitBox" to="Player" method="_on_HitBox_area_entered"]
