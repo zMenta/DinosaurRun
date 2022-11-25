@@ -19,5 +19,10 @@ position = Vector2( 24, 158 )
 wait_time = 0.1
 autostart = true
 
+[node name="PointTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="player_died" from="Player" to="." method="_on_Player_died"]
 [connection signal="timeout" from="SpeedIncreaseTimer" to="." method="_on_SpeedIncreaseTimer_timeout"]
+[connection signal="timeout" from="PointTimer" to="." method="_on_PointTimer_timeout"]
