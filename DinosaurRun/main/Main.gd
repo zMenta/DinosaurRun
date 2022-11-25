@@ -7,6 +7,7 @@ export(int) var points_per_timeout := 1
 onready var map := $Map
 onready var obstacle_manager := $ObstacleManager
 onready var point_timer := $PointTimer
+onready var interface := $Interface
 
 var points := 0
 
@@ -24,3 +25,4 @@ func _on_Player_died():
 
 func _on_PointTimer_timeout():
 	points += points_per_timeout
+	interface.update_score(points)
