@@ -1,4 +1,17 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=4 format=2]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.329412, 0.541176, 0.807843, 1 )
+border_width_bottom = 3
+border_color = Color( 0.117647, 0.152941, 0.286275, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing = false
+anti_aliasing_size = 0.01
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.360784, 0.454902, 0.556863, 1 )
@@ -13,6 +26,22 @@ expand_margin_right = 10.0
 anti_aliasing = false
 anti_aliasing_size = 0.01
 
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.289398, 0.462149, 0.679688, 1 )
+border_width_top = 3
+border_color = Color( 0.117647, 0.152941, 0.286275, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+anti_aliasing = false
+anti_aliasing_size = 0.01
+
 [resource]
 Button/colors/font_color_hover = Color( 0.878431, 0.831373, 0.12549, 1 )
+Button/colors/font_color_pressed = Color( 0.773438, 0.736805, 0.187317, 1 )
+Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 3 )
