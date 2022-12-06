@@ -6,6 +6,8 @@ signal died
 const JUMP_VELOCITY := -100
 const MAX_JUMP_VELOCITY := -300
 
+onready var animation := $AnimationPlayer
+
 var _gravity : float = 9.8
 var _gravity_multiplier := 100
 var _can_jump := true
@@ -42,6 +44,7 @@ func death() -> void:
 	rotation = 3.14
 	dead = true
 	emit_signal("died")
+	animation.stop()
 
 
 func _on_HitBox_area_entered(area:Area2D) -> void:
