@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 163.0
+margin_top = 66.0
+margin_right = 203.0
+margin_bottom = 106.0
+color = Color( 0.152941, 0.188235, 0.262745, 0.607843 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+modulate = Color( 0.52549, 0.52549, 0.52549, 0.278431 )
+margin_right = 157.0
+margin_bottom = 131.0
