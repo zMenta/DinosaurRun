@@ -54,6 +54,7 @@ func _on_MenuMain_buttonExit_pressed() -> void:
 
 func _on_MenuGameOver_buttonRestart_pressed() -> void:
 	menu_gameover.visible = false
+	obstacle_manager.restart_obstacles()
 	map.restart_world()
 	_start_game()
 	player.revive_player()
