@@ -24,6 +24,17 @@ func increase_obstacles_speed(speed_increase: float) -> void:
 		obstacle.speed = current_speed
 
 
+func restart_obstacles() -> void:
+	clear_obstacles()
+	current_speed = base_obstacle_speed
+	start_obstacles()
+
+
+func clear_obstacles() -> void:
+	for obstacle in obstacles_group.get_children():
+		obstacle.queue_free()
+
+
 func stop_obstacles() -> void:
 	spawn_timer.stop()
 	for obstacle in obstacles_group.get_children():

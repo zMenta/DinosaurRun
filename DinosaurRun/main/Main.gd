@@ -4,6 +4,7 @@ export(float) var speed_increase_value := 0.2
 export(float) var obstacle_spawn_rate_increase := 0.001
 export(int) var points_per_timeout := 1
 
+onready var player := $Player
 onready var map := $Map
 onready var obstacle_manager := $ObstacleManager
 onready var point_timer := $PointTimer
@@ -13,6 +14,7 @@ onready var menu_main := $Interfaces/MenuMain
 onready var menu_gameover := $Interfaces/MenuGameOver
 
 var points := 0
+
 
 func _start_game() -> void:
 	points = 0
@@ -51,8 +53,12 @@ func _on_MenuMain_buttonExit_pressed() -> void:
 
 
 func _on_MenuGameOver_buttonRestart_pressed() -> void:
-	pass
-
+	menu_gameover.visible = false
+	obstacle_manager.restart_obstacles()
+	map.restart_world()
+	_start_game()
+	player.revive_player()
+	
 
 func _on_MenuGameOver_buttonGoBack_pressed() -> void:
 	get_tree().reload_current_scene()
