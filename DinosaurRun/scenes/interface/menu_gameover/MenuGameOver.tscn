@@ -5,6 +5,4 @@
 [node name="Menu" instance=ExtResource( 1 )]
 
 [node name="ButtonPlay" parent="ColorRect/VBoxContainer" index="0"]
-margin_top = 62.0
-margin_bottom = 78.0
-icon = null
+text = "Restart"
