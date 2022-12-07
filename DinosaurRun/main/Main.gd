@@ -55,6 +55,7 @@ func _on_MenuGameOver_buttonRestart_pressed() -> void:
 
 
 func _on_MenuGameOver_buttonGoBack_pressed() -> void:
-	menu_main.visible = true
-	menu_gameover.visible = false
+#	menu_main.visible = true
+#	menu_gameover.visible = false
+	get_tree().reload_current_scene()
 	
