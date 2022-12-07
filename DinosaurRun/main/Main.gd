@@ -14,6 +14,7 @@ onready var menu_gameover := $Interfaces/MenuGameOver
 
 var points := 0
 
+
 func _start_game() -> void:
 	points = 0
 	point_timer.start()

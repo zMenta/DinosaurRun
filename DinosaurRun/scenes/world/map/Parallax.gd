@@ -19,3 +19,9 @@ func start_layers() -> void:
 	for layer in parallax_background.get_children():
 		if layer.get_script() != null:
 			layer.is_moving = true
+
+
+func restore_layers() -> void:
+	for layer in parallax_background.get_children():
+		if layer.get_script() != null:
+			layer.restore_default_speed()
