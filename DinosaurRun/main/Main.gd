@@ -52,7 +52,8 @@ func _on_MenuMain_buttonExit_pressed() -> void:
 
 
 func _on_MenuGameOver_buttonRestart_pressed() -> void:
-	pass
+	map.restart_world()
+	_start_game()
 
 
 func _on_MenuGameOver_buttonGoBack_pressed() -> void:

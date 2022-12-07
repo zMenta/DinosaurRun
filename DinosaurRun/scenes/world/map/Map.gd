@@ -7,6 +7,7 @@ func increase_world_speed(speed_increase: float) -> void:
 
 func restart_world() -> void:
 	parallax.restore_layers()
+	start_world()
 
 func stop_world() -> void:
 	parallax.stop_layers()

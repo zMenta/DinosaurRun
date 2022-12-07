@@ -9,7 +9,7 @@ func _physics_process(delta: float) -> void:
 	if not is_moving:
 		return
 	
-	motion_offset.x -= speed * delta
+	motion_offset.x -= current_speed * delta
 
 
 func restore_default_speed() -> void:
