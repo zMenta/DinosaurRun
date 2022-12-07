@@ -36,7 +36,9 @@ text = "Final Score:"
 margin_left = 88.0
 margin_right = 123.0
 margin_bottom = 13.0
+rect_min_size = Vector2( 35, 0 )
 text = "00000"
+clip_text = true
 
 [node name="ButtonRestart" parent="ColorRect/VBoxContainer" index="0" instance=ExtResource( 2 )]
 margin_top = 49.0
