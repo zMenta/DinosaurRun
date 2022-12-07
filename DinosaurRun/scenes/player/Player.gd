@@ -47,6 +47,12 @@ func death() -> void:
 	animation.stop()
 
 
+func revive() -> void:
+	rotation = 0
+	dead = false
+	animation.play("running")
+
+
 func _on_HitBox_area_entered(area:Area2D) -> void:
 	if area.name == "ObstacleHitbox":
 		death()
