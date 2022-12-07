@@ -8,8 +8,9 @@ onready var map := $Map
 onready var obstacle_manager := $ObstacleManager
 onready var point_timer := $PointTimer
 onready var speed_increase_timer := $SpeedIncreaseTimer
-onready var interface := $Interface
-onready var menu := $MenuMain
+onready var interface := $Interfaces/Interface
+onready var menu_main := $Interfaces/MenuMain
+onready var menu_gameover := $Interfaces/MenuGameOver
 
 var points := 0
 
@@ -18,7 +19,7 @@ func _start_game() -> void:
 	point_timer.start()
 	speed_increase_timer.start()
 	interface.visible = true
-	menu.visible = false
+	menu_main.visible = false
 	obstacle_manager.start_obstacles()
 
 
@@ -32,6 +33,7 @@ func _on_Player_died():
 	map.stop_world()
 	obstacle_manager.stop_obstacles()
 	point_timer.stop()
+	menu_gameover.visible = true
 
 
 func _on_PointTimer_timeout():
@@ -45,3 +47,13 @@ func _on_MenuMain_buttonPlay_pressed() -> void:
 
 func _on_MenuMain_buttonExit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_MenuGameOver_buttonRestart_pressed() -> void:
+	pass
+
+
+func _on_MenuGameOver_buttonGoBack_pressed() -> void:
+	menu_main.visible = true
+	menu_gameover.visible = false
+	
