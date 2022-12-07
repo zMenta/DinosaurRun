@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/interface/menu/menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/interface/button/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://common/menu_icons/menu_icons.png" type="Texture" id=3]
+[ext_resource path="res://scenes/interface/menu_gameover/MenuGameOver.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+resource_local_to_scene = true
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+resource_local_to_scene = true
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 16 )
+
+[node name="MenuGameOver" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="LabelTitle" parent="ColorRect" index="0"]
+text = "Play again?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" index="1"]
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 139.0
+margin_bottom = 45.0
+
+[node name="LabelFinalScore" type="Label" parent="ColorRect/HBoxContainer" index="0"]
+margin_right = 84.0
+margin_bottom = 13.0
+text = "Final Score:"
+
+[node name="LabelScoreValue" type="Label" parent="ColorRect/HBoxContainer" index="1"]
+margin_left = 88.0
+margin_right = 123.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 35, 0 )
+text = "00000"
+clip_text = true
+
+[node name="ButtonRestart" parent="ColorRect/VBoxContainer" index="0" instance=ExtResource( 2 )]
+margin_top = 49.0
+margin_bottom = 68.0
+text = "Restart"
+icon = SubResource( 1 )
+
+[node name="ButtonGoBack" parent="ColorRect/VBoxContainer" index="1" instance=ExtResource( 2 )]
+margin_top = 72.0
+margin_bottom = 91.0
+text = "Main Menu"
+icon = SubResource( 2 )
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonRestart" to="." method="_on_ButtonRestart_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonGoBack" to="." method="_on_ButtonGoBack_pressed"]
