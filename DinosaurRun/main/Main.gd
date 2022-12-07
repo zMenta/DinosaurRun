@@ -9,7 +9,7 @@ onready var obstacle_manager := $ObstacleManager
 onready var point_timer := $PointTimer
 onready var speed_increase_timer := $SpeedIncreaseTimer
 onready var interface := $Interface
-onready var menu := $Menu
+onready var menu := $MenuMain
 
 var points := 0
 
@@ -39,5 +39,6 @@ func _on_PointTimer_timeout():
 	interface.update_score(points)
 
 
-func _on_Menu_buttonPlay_pressed() -> void:
+func _on_MenuMain_buttonPlay_pressed() -> void:
 	_start_game()
+
