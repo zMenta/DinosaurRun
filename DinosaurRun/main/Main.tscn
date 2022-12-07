@@ -31,4 +31,5 @@ visible = false
 [connection signal="player_died" from="Player" to="." method="_on_Player_died"]
 [connection signal="timeout" from="SpeedIncreaseTimer" to="." method="_on_SpeedIncreaseTimer_timeout"]
 [connection signal="timeout" from="PointTimer" to="." method="_on_PointTimer_timeout"]
+[connection signal="buttonExit_pressed" from="MenuMain" to="." method="_on_MenuMain_buttonExit_pressed"]
 [connection signal="buttonPlay_pressed" from="MenuMain" to="." method="_on_MenuMain_buttonPlay_pressed"]

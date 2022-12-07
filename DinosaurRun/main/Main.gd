@@ -42,3 +42,6 @@ func _on_PointTimer_timeout():
 func _on_MenuMain_buttonPlay_pressed() -> void:
 	_start_game()
 
+
+func _on_MenuMain_buttonExit_pressed() -> void:
+	get_tree().quit()
