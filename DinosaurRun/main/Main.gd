@@ -33,6 +33,7 @@ func _on_Player_died():
 	map.stop_world()
 	obstacle_manager.stop_obstacles()
 	point_timer.stop()
+	menu_gameover.score_value = points
 	menu_gameover.visible = true
 
 
