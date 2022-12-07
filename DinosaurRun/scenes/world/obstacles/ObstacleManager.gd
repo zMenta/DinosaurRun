@@ -10,6 +10,7 @@ onready var spawn_position := $SpawnPosition
 onready var obstacles := [obstacle_small, obstacle_big]
 onready var obstacles_group := $ObstaclesGroup
 
+onready var current_speed := base_obstacle_speed
 
 
 func increase_spawn_rate(value: float) -> void:
@@ -18,9 +19,9 @@ func increase_spawn_rate(value: float) -> void:
 
 
 func increase_obstacles_speed(speed_increase: float) -> void:
-	base_obstacle_speed += speed_increase
+	current_speed += speed_increase
 	for obstacle in obstacles_group.get_children():
-		obstacle.speed = base_obstacle_speed
+		obstacle.speed = current_speed
 
 
 func stop_obstacles() -> void:
