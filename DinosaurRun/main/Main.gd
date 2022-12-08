@@ -12,6 +12,7 @@ onready var speed_increase_timer := $SpeedIncreaseTimer
 onready var interface := $Interfaces/Interface
 onready var menu_main := $Interfaces/MenuMain
 onready var menu_gameover := $Interfaces/MenuGameOver
+onready var menu_options := $Interfaces/MenuOptions
 
 var points := 0
 var highscore := 0 setget set_highscore
@@ -75,3 +76,13 @@ func _on_MenuGameOver_buttonRestart_pressed() -> void:
 
 func _on_MenuGameOver_buttonGoBack_pressed() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_MenuMain_buttonSettings_pressed() -> void:
+	menu_main.visible = false
+	menu_options.visible = true
+
+
+func _on_MenuOptions_buttonMainMenu_pressed() -> void:
+	menu_main.visible = true
+	menu_options.visible = false
