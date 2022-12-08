@@ -18,9 +18,9 @@ margin_left = -115.0
 margin_right = 114.0
 
 [node name="Resolution" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="0"]
-margin_top = 60.0
+margin_top = 46.0
 margin_right = 229.0
-margin_bottom = 79.0
+margin_bottom = 65.0
 
 [node name="LabelResolution" type="Label" parent="ColorRect/VBoxContainer/Resolution" index="0"]
 margin_top = 3.0
@@ -33,4 +33,26 @@ margin_left = 74.0
 margin_right = 166.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 92, 19 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "1920x1080"
+
+[node name="FullScreen" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="1"]
+margin_top = 69.0
+margin_right = 229.0
+margin_bottom = 93.0
+
+[node name="LabelFullscreen" type="Label" parent="ColorRect/VBoxContainer/FullScreen" index="0"]
+margin_top = 5.0
+margin_right = 70.0
+margin_bottom = 18.0
+text = "FullScreen"
+
+[node name="CheckBox" type="CheckBox" parent="ColorRect/VBoxContainer/FullScreen" index="1"]
+margin_left = 74.0
+margin_right = 98.0
+margin_bottom = 24.0
+focus_mode = 0
+enabled_focus_mode = 0
+
+[connection signal="toggled" from="ColorRect/VBoxContainer/FullScreen/CheckBox" to="." method="_on_CheckBox_toggled"]
