@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/world/map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/obstacles/ObstacleManager.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/interface/interface/Interface.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/interface/menu_main/MenuMain.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/interface/menu_gameover/MenuGameOver.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/interface/menu_options/MenuOptions.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -34,10 +35,15 @@ visible = false
 [node name="MenuGameOver" parent="Interfaces" instance=ExtResource( 7 )]
 visible = false
 
+[node name="MenuOptions" parent="Interfaces" instance=ExtResource( 8 )]
+visible = false
+
 [connection signal="player_died" from="Player" to="." method="_on_Player_died"]
 [connection signal="timeout" from="SpeedIncreaseTimer" to="." method="_on_SpeedIncreaseTimer_timeout"]
 [connection signal="timeout" from="PointTimer" to="." method="_on_PointTimer_timeout"]
 [connection signal="buttonExit_pressed" from="Interfaces/MenuMain" to="." method="_on_MenuMain_buttonExit_pressed"]
 [connection signal="buttonPlay_pressed" from="Interfaces/MenuMain" to="." method="_on_MenuMain_buttonPlay_pressed"]
+[connection signal="buttonSettings_pressed" from="Interfaces/MenuMain" to="." method="_on_MenuMain_buttonSettings_pressed"]
 [connection signal="buttonGoBack_pressed" from="Interfaces/MenuGameOver" to="." method="_on_MenuGameOver_buttonGoBack_pressed"]
 [connection signal="buttonRestart_pressed" from="Interfaces/MenuGameOver" to="." method="_on_MenuGameOver_buttonRestart_pressed"]
+[connection signal="buttonMainMenu_pressed" from="Interfaces/MenuOptions" to="." method="_on_MenuOptions_buttonMainMenu_pressed"]

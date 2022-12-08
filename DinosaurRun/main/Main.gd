@@ -12,8 +12,10 @@ onready var speed_increase_timer := $SpeedIncreaseTimer
 onready var interface := $Interfaces/Interface
 onready var menu_main := $Interfaces/MenuMain
 onready var menu_gameover := $Interfaces/MenuGameOver
+onready var menu_options := $Interfaces/MenuOptions
 
 var points := 0
+var highscore := 0 setget set_highscore
 
 
 func _start_game() -> void:
@@ -25,18 +27,30 @@ func _start_game() -> void:
 	obstacle_manager.start_obstacles()
 
 
-func _on_SpeedIncreaseTimer_timeout():
-	obstacle_manager.increase_spawn_rate(obstacle_spawn_rate_increase)
-	obstacle_manager.increase_obstacles_speed(speed_increase_value)
-	map.increase_world_speed(speed_increase_value)
+func _validade_highscore(points_made: int) -> void:
+	if points_made > highscore:
+		highscore = points_made
+
+
+func set_highscore(new_value: int) -> void:
+	highscore = new_value
+	menu_main.set_highscore_label(highscore)
 
 
 func _on_Player_died():
 	map.stop_world()
 	obstacle_manager.stop_obstacles()
 	point_timer.stop()
-	menu_gameover.score_value = points
+	menu_gameover.set_label_score(points)
 	menu_gameover.visible = true
+	_validade_highscore(points)
+
+
+
+func _on_SpeedIncreaseTimer_timeout():
+	obstacle_manager.increase_spawn_rate(obstacle_spawn_rate_increase)
+	obstacle_manager.increase_obstacles_speed(speed_increase_value)
+	map.increase_world_speed(speed_increase_value)
 
 
 func _on_PointTimer_timeout():
@@ -62,4 +76,13 @@ func _on_MenuGameOver_buttonRestart_pressed() -> void:
 
 func _on_MenuGameOver_buttonGoBack_pressed() -> void:
 	get_tree().reload_current_scene()
-	
+
+
+func _on_MenuMain_buttonSettings_pressed() -> void:
+	menu_main.visible = false
+	menu_options.visible = true
+
+
+func _on_MenuOptions_buttonMainMenu_pressed() -> void:
+	menu_main.visible = true
+	menu_options.visible = false
