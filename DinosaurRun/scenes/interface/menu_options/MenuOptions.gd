@@ -1,5 +1,7 @@
 extends Control
 
+signal buttonMainMenu_pressed
+
 onready var resolution_options_button := $ColorRect/VBoxContainer/Resolution/OptionButtonResolution
 
 var resolutions: Dictionary = {
@@ -26,3 +28,7 @@ func _on_CheckBoxBordless_toggled(button_pressed:bool) -> void:
 func _on_OptionButtonResolution_item_selected(index:int) -> void:
 	var window_size: Vector2 = resolutions[resolution_options_button.get_item_text(index)]
 	OS.set_window_size(window_size)
+
+
+func _on_ButtonMainMenu_pressed() -> void:
+	emit_signal("buttonMainMenu_pressed")
