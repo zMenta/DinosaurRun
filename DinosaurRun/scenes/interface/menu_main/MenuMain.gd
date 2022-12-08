@@ -5,6 +5,12 @@ signal buttonSettings_pressed
 signal buttonStats_pressed   
 signal buttonExit_pressed   
 
+onready var highcsore_label := $ColorRect/HBoxContainer/LabelHighscoreValue
+
+
+func set_highscore_label(highscore_value: int) -> void:
+	highcsore_label.text = str(highscore_value)
+
 
 func _on_ButtonPlay_pressed() -> void:
 	emit_signal("buttonPlay_pressed")

@@ -27,7 +27,32 @@ region = Rect2( 48, 0, 16, 16 )
 script = ExtResource( 4 )
 
 [node name="LabelTitle" parent="ColorRect" index="0"]
-text = "HighScore: 0"
+visible = false
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 40.0
+margin_bottom = 13.0
+text = ""
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" index="1"]
+margin_left = 8.0
+margin_right = 96.0
+margin_bottom = 40.0
+
+[node name="LabelTitle" type="Label" parent="ColorRect/HBoxContainer" index="0"]
+margin_top = 13.0
+margin_right = 70.0
+margin_bottom = 26.0
+text = "HighScore:"
+
+[node name="LabelHighscoreValue" type="Label" parent="ColorRect/HBoxContainer" index="1"]
+margin_left = 74.0
+margin_top = 13.0
+margin_right = 129.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 55, 0 )
+text = "0"
+clip_text = true
 
 [node name="ButtonPlay" parent="ColorRect/VBoxContainer" index="0" instance=ExtResource( 5 )]
 margin_top = 26.0
