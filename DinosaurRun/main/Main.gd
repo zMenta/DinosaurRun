@@ -31,7 +31,7 @@ func _create_or_load_save() -> void:
 		_save.player_stats = PlayerStats.new()
 		_save.write_savegame()
 
-	highscore = _save.player_stats.highscore
+	set_highscore(_save.player_stats.highscore)
 
 
 func _save_game() -> void:
