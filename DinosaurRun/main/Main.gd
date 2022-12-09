@@ -17,6 +17,7 @@ onready var menu_options := $Interfaces/MenuOptions
 var _save: SaveData
 var points := 0
 var highscore := 0 setget set_highscore
+var total_points_made := 0
 
 
 func _ready() -> void:
@@ -36,6 +37,7 @@ func _create_or_load_save() -> void:
 
 func _save_game() -> void:
 	_save.player_stats.highscore = highscore
+	_save.player_stats.total_points_made = total_points_made
 	_save.write_savegame()
 
 
@@ -64,6 +66,7 @@ func _on_Player_died():
 	point_timer.stop()
 	menu_gameover.set_label_score(points)
 	menu_gameover.visible = true
+	total_points_made += points
 	_validade_highscore(points)
 	_save_game()
 
