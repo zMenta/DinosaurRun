@@ -124,3 +124,13 @@ func _on_MenuMain_buttonStats_pressed() -> void:
 func _on_MenuStats_buttonMainMenu_pressed() -> void:
 	menu_stats.visible = false
 	menu_main.visible = true
+
+
+func _on_MenuStats_buttonResetStats_pressed() -> void:
+	_save = SaveData.new()
+	_save.player_stats = PlayerStats.new()
+	_save.write_savegame()
+
+	set_highscore(_save.player_stats.highscore)
+	total_points_made = _save.player_stats.total_points_made
+	menu_stats.save = _save

@@ -53,3 +53,4 @@ visible = false
 [connection signal="buttonRestart_pressed" from="Interfaces/MenuGameOver" to="." method="_on_MenuGameOver_buttonRestart_pressed"]
 [connection signal="buttonMainMenu_pressed" from="Interfaces/MenuOptions" to="." method="_on_buttonMainMenu_pressed"]
 [connection signal="buttonMainMenu_pressed" from="Interfaces/MenuStats" to="." method="_on_MenuStats_buttonMainMenu_pressed"]
+[connection signal="buttonResetStats_pressed" from="Interfaces/MenuStats" to="." method="_on_MenuStats_buttonResetStats_pressed"]
