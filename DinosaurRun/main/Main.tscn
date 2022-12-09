@@ -51,6 +51,6 @@ visible = false
 [connection signal="buttonStats_pressed" from="Interfaces/MenuMain" to="." method="_on_MenuMain_buttonStats_pressed"]
 [connection signal="buttonGoBack_pressed" from="Interfaces/MenuGameOver" to="." method="_on_MenuGameOver_buttonGoBack_pressed"]
 [connection signal="buttonRestart_pressed" from="Interfaces/MenuGameOver" to="." method="_on_MenuGameOver_buttonRestart_pressed"]
-[connection signal="buttonMainMenu_pressed" from="Interfaces/MenuOptions" to="." method="_on_buttonMainMenu_pressed"]
+[connection signal="buttonMainMenu_pressed" from="Interfaces/MenuOptions" to="." method="_on_MenuOptions_buttonMainMenu_pressed"]
 [connection signal="buttonMainMenu_pressed" from="Interfaces/MenuStats" to="." method="_on_MenuStats_buttonMainMenu_pressed"]
 [connection signal="buttonResetStats_pressed" from="Interfaces/MenuStats" to="." method="_on_MenuStats_buttonResetStats_pressed"]
