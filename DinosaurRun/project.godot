@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/world/EnviromentLayer.gd"
 }, {
-"base": "Reference",
+"base": "Resource",
 "class": "GameSettings",
 "language": "GDScript",
 "path": "res://common/resources/GameSettings.gd"
