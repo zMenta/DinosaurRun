@@ -14,8 +14,29 @@ onready var menu_main := $Interfaces/MenuMain
 onready var menu_gameover := $Interfaces/MenuGameOver
 onready var menu_options := $Interfaces/MenuOptions
 
+var _save: SaveData
 var points := 0
 var highscore := 0 setget set_highscore
+
+
+func _ready() -> void:
+	_create_or_load_save()
+
+
+func _create_or_load_save() -> void:
+	if SaveData.save_exist():
+		_save = SaveData.load_savegame() as SaveData
+	else:
+		_save = SaveData.new()
+		_save.player_stats = PlayerStats.new()
+		_save.write_savegame()
+
+	highscore = _save.player_stats.highscore
+
+
+func _save_game() -> void:
+	_save.player_stats.highscore = highscore
+	_save.write_savegame()
 
 
 func _start_game() -> void:
@@ -44,6 +65,7 @@ func _on_Player_died():
 	menu_gameover.set_label_score(points)
 	menu_gameover.visible = true
 	_validade_highscore(points)
+	_save_game()
 
 
 
