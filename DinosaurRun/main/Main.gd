@@ -34,6 +34,7 @@ func _create_or_load_save() -> void:
 		_save.write_savegame()
 
 	set_highscore(_save.player_stats.highscore)
+	total_points_made = _save.player_stats.total_points_made
 	menu_stats.save = _save
 
 
@@ -116,4 +117,10 @@ func _on_MenuOptions_buttonMainMenu_pressed() -> void:
 
 
 func _on_MenuMain_buttonStats_pressed() -> void:
-	pass # Replace with function body.
+	menu_main.visible = false
+	menu_stats.visible = true
+
+
+func _on_MenuStats_buttonMainMenu_pressed() -> void:
+	menu_stats.visible = false
+	menu_main.visible = true
