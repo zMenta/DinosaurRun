@@ -13,10 +13,12 @@ onready var interface := $Interfaces/Interface
 onready var menu_main := $Interfaces/MenuMain
 onready var menu_gameover := $Interfaces/MenuGameOver
 onready var menu_options := $Interfaces/MenuOptions
+onready var menu_stats := $Interfaces/MenuStats
 
-var _save: SaveData
+var _save : SaveData
 var points := 0
 var highscore := 0 setget set_highscore
+var total_points_made := 0
 
 
 func _ready() -> void:
@@ -32,10 +34,13 @@ func _create_or_load_save() -> void:
 		_save.write_savegame()
 
 	set_highscore(_save.player_stats.highscore)
+	total_points_made = _save.player_stats.total_points_made
+	menu_stats.save = _save
 
 
 func _save_game() -> void:
 	_save.player_stats.highscore = highscore
+	_save.player_stats.total_points_made = total_points_made
 	_save.write_savegame()
 
 
@@ -64,6 +69,7 @@ func _on_Player_died():
 	point_timer.stop()
 	menu_gameover.set_label_score(points)
 	menu_gameover.visible = true
+	total_points_made += points
 	_validade_highscore(points)
 	_save_game()
 
@@ -108,3 +114,23 @@ func _on_MenuMain_buttonSettings_pressed() -> void:
 func _on_MenuOptions_buttonMainMenu_pressed() -> void:
 	menu_main.visible = true
 	menu_options.visible = false
+
+
+func _on_MenuMain_buttonStats_pressed() -> void:
+	menu_main.visible = false
+	menu_stats.visible = true
+
+
+func _on_MenuStats_buttonMainMenu_pressed() -> void:
+	menu_stats.visible = false
+	menu_main.visible = true
+
+
+func _on_MenuStats_buttonResetStats_pressed() -> void:
+	_save = SaveData.new()
+	_save.player_stats = PlayerStats.new()
+	_save.write_savegame()
+
+	set_highscore(_save.player_stats.highscore)
+	total_points_made = _save.player_stats.total_points_made
+	menu_stats.save = _save

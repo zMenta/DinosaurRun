@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/interface/menu/menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/interface/button/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://common/menu_icons/menu_icons.png" type="Texture" id=3]
+[ext_resource path="res://scenes/interface/menu_stats/MenuStats.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=2]
+resource_local_to_scene = true
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=1]
+resource_local_to_scene = true
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 16 )
+
+[node name="MenuStats" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="ColorRect" parent="." index="0"]
+margin_left = 56.0
+
+[node name="LabelTitle" parent="ColorRect" index="0"]
+text = "Player Stats"
+
+[node name="VBoxContainer" parent="ColorRect" index="1"]
+margin_left = -115.0
+margin_right = 114.0
+
+[node name="HighScore" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="0"]
+margin_top = 23.0
+margin_right = 230.0
+margin_bottom = 36.0
+alignment = 1
+
+[node name="LabelHighscore" type="Label" parent="ColorRect/VBoxContainer/HighScore" index="0"]
+margin_left = 46.0
+margin_right = 123.0
+margin_bottom = 13.0
+text = "Highscore: "
+
+[node name="LabelHighscoreValue" type="Label" parent="ColorRect/VBoxContainer/HighScore" index="1"]
+margin_left = 127.0
+margin_right = 183.0
+margin_bottom = 13.0
+rect_min_size = Vector2( 56, 0 )
+text = "00000000"
+clip_text = true
+
+[node name="TotalScore" type="VBoxContainer" parent="ColorRect/VBoxContainer" index="1"]
+margin_top = 40.0
+margin_right = 230.0
+margin_bottom = 70.0
+
+[node name="LabelTotalScore" type="Label" parent="ColorRect/VBoxContainer/TotalScore" index="0"]
+margin_right = 230.0
+margin_bottom = 13.0
+text = "Total points made:"
+align = 1
+
+[node name="LabelTotalScoreValue" type="Label" parent="ColorRect/VBoxContainer/TotalScore" index="1"]
+margin_top = 17.0
+margin_right = 230.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 230, 0 )
+text = "000000000000000000000"
+align = 1
+clip_text = true
+
+[node name="ButtonResetStats" parent="ColorRect/VBoxContainer" index="2" instance=ExtResource( 2 )]
+margin_left = 67.0
+margin_top = 74.0
+margin_right = 162.0
+margin_bottom = 93.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0.658824, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.839216, 0.113725, 0.113725, 1 )
+text = "Reset Stats"
+icon = SubResource( 2 )
+
+[node name="ButtonMainMenu" parent="ColorRect/VBoxContainer" index="3" instance=ExtResource( 2 )]
+margin_left = 74.0
+margin_top = 97.0
+margin_right = 155.0
+margin_bottom = 116.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Main Menu"
+icon = SubResource( 1 )
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonResetStats" to="." method="_on_ButtonResetStats_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonMainMenu" to="." method="_on_ButtonMainMenu_pressed"]
