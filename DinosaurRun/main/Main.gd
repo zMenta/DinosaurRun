@@ -31,11 +31,13 @@ func _create_or_load_save() -> void:
 	else:
 		_save = SaveData.new()
 		_save.player_stats = PlayerStats.new()
+		_save.game_settings = GameSettings.new()
 		_save.write_savegame()
 
 	set_highscore(_save.player_stats.highscore)
 	total_points_made = _save.player_stats.total_points_made
 	menu_stats.save = _save
+	menu_options.save = _save
 
 
 func _save_game() -> void:
@@ -134,3 +136,8 @@ func _on_MenuStats_buttonResetStats_pressed() -> void:
 	set_highscore(_save.player_stats.highscore)
 	total_points_made = _save.player_stats.total_points_made
 	menu_stats.save = _save
+
+
+func _on_MenuOptions_game_settings_saved(save_settings: SaveData) -> void:
+	_save.game_settings = save_settings.game_settings
+	_save_game()

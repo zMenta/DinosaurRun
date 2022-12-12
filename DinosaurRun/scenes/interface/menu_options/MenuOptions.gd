@@ -1,8 +1,13 @@
 extends Control
 
 signal buttonMainMenu_pressed
+signal game_settings_saved(save)
 
 onready var resolution_options_button := $ColorRect/VBoxContainer/Resolution/OptionButtonResolution
+onready var button_fullscreen := $ColorRect/VBoxContainer/FullScreen/CheckBox
+
+
+onready var save: SaveData setget set_save_data
 
 var resolutions: Dictionary = {
 	"1920x1080": Vector2(1920, 1080),
@@ -12,7 +17,16 @@ var resolutions: Dictionary = {
 	}
 
 
+func set_save_data(new_save: SaveData) -> void:
+	save = new_save
+	_on_CheckBox_toggled(save.game_settings.fullscreen)
+	button_fullscreen.pressed = save.game_settings.fullscreen
+	 # _on_CheckBoxBordless_toggled(save.game_settings.borderless)
+	# _on_OptionButtonResolution_item_selected(save.game_settings.screen_resolution_id)
+
+
 func _ready():
+	button_fullscreen.toggle_mode = true
 	for resolution in resolutions:
 		resolution_options_button.add_item(resolution)
 
@@ -32,3 +46,7 @@ func _on_OptionButtonResolution_item_selected(index:int) -> void:
 
 func _on_ButtonMainMenu_pressed() -> void:
 	emit_signal("buttonMainMenu_pressed")
+
+	save.game_settings.fullscreen = button_fullscreen.pressed
+
+	emit_signal("game_settings_saved", save)
