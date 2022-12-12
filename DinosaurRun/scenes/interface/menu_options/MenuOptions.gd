@@ -27,7 +27,7 @@ func set_save_data(new_save: SaveData) -> void:
 	button_borderless.pressed = save.game_settings.borderless
 
 	_on_OptionButtonResolution_item_selected(save.game_settings.screen_resolution_id)
-	resolution_options_button.text = resolution_options_button.get_item_text(save.game_settings.screen_resolution_id)
+	resolution_options_button.selected = save.game_settings.screen_resolution_id
 
 
 func _ready():
