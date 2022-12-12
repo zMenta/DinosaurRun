@@ -7,8 +7,7 @@ onready var resolution_options_button := $ColorRect/VBoxContainer/Resolution/Opt
 onready var button_fullscreen := $ColorRect/VBoxContainer/FullScreen/CheckBox
 onready var button_borderless := $ColorRect/VBoxContainer/Borderless/CheckBoxBordless
 
-
-onready var save: SaveData setget set_save_data
+var save: SaveData setget set_save_data
 
 var resolutions: Dictionary = {
 	"1920x1080": Vector2(1920, 1080),
@@ -20,7 +19,7 @@ var resolutions: Dictionary = {
 
 func set_save_data(new_save: SaveData) -> void:
 	save = new_save
-
+	
 	_on_CheckBox_toggled(save.game_settings.fullscreen)
 	button_fullscreen.pressed = save.game_settings.fullscreen
 
@@ -38,21 +37,20 @@ func _ready():
 
 func _on_CheckBox_toggled(button_pressed:bool) -> void:
 	OS.window_fullscreen = button_pressed
+	save.game_settings.fullscreen = button_pressed
 
 
 func _on_CheckBoxBordless_toggled(button_pressed:bool) -> void:
 	OS.window_borderless = button_pressed
+	save.game_settings.borderless = button_pressed
 
 
 func _on_OptionButtonResolution_item_selected(index:int) -> void:
 	var window_size: Vector2 = resolutions[resolution_options_button.get_item_text(index)]
 	OS.set_window_size(window_size)
+	
+	save.game_settings.screen_resolution_id = index
 
 func _on_ButtonMainMenu_pressed() -> void:
 	emit_signal("buttonMainMenu_pressed")
-
-	save.game_settings.screen_resolution_id = resolution_options_button.get_selected_id()
-	save.game_settings.fullscreen = button_fullscreen.pressed
-	save.game_settings.borderless = button_borderless.pressed
-
 	emit_signal("game_settings_saved", save)
