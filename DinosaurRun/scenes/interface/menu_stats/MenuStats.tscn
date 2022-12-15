@@ -27,11 +27,12 @@ text = "Player Stats"
 [node name="VBoxContainer" parent="ColorRect" index="1"]
 margin_left = -115.0
 margin_right = 114.0
+custom_constants/separation = 9
 
 [node name="HighScore" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="0"]
-margin_top = 23.0
+margin_top = 16.0
 margin_right = 230.0
-margin_bottom = 36.0
+margin_bottom = 29.0
 alignment = 1
 
 [node name="LabelHighscore" type="Label" parent="ColorRect/VBoxContainer/HighScore" index="0"]
@@ -49,9 +50,9 @@ text = "00000000"
 clip_text = true
 
 [node name="TotalScore" type="VBoxContainer" parent="ColorRect/VBoxContainer" index="1"]
-margin_top = 40.0
+margin_top = 38.0
 margin_right = 230.0
-margin_bottom = 70.0
+margin_bottom = 68.0
 
 [node name="LabelTotalScore" type="Label" parent="ColorRect/VBoxContainer/TotalScore" index="0"]
 margin_right = 230.0
@@ -70,9 +71,9 @@ clip_text = true
 
 [node name="ButtonResetStats" parent="ColorRect/VBoxContainer" index="2" instance=ExtResource( 2 )]
 margin_left = 67.0
-margin_top = 74.0
+margin_top = 77.0
 margin_right = 162.0
-margin_bottom = 93.0
+margin_bottom = 96.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 custom_colors/font_color = Color( 0.658824, 0, 0, 1 )
@@ -82,9 +83,9 @@ icon = SubResource( 2 )
 
 [node name="ButtonMainMenu" parent="ColorRect/VBoxContainer" index="3" instance=ExtResource( 2 )]
 margin_left = 74.0
-margin_top = 97.0
+margin_top = 105.0
 margin_right = 155.0
-margin_bottom = 116.0
+margin_bottom = 124.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 0

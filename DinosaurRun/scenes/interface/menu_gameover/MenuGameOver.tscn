@@ -40,15 +40,19 @@ rect_min_size = Vector2( 35, 0 )
 text = "00000"
 clip_text = true
 
+[node name="VBoxContainer" parent="ColorRect" index="2"]
+margin_top = 56.0
+custom_constants/separation = 15
+
 [node name="ButtonRestart" parent="ColorRect/VBoxContainer" index="0" instance=ExtResource( 2 )]
-margin_top = 49.0
-margin_bottom = 68.0
+margin_top = 19.0
+margin_bottom = 38.0
 text = "Restart"
 icon = SubResource( 1 )
 
 [node name="ButtonGoBack" parent="ColorRect/VBoxContainer" index="1" instance=ExtResource( 2 )]
-margin_top = 72.0
-margin_bottom = 91.0
+margin_top = 53.0
+margin_bottom = 72.0
 text = "Main Menu"
 icon = SubResource( 2 )
 
