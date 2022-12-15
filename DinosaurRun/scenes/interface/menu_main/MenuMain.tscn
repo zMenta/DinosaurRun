@@ -54,15 +54,19 @@ rect_min_size = Vector2( 55, 0 )
 text = "0"
 clip_text = true
 
+[node name="VBoxContainer" parent="ColorRect" index="2"]
+margin_top = 32.0
+custom_constants/separation = 8
+
 [node name="ButtonPlay" parent="ColorRect/VBoxContainer" index="0" instance=ExtResource( 5 )]
-margin_top = 26.0
-margin_bottom = 45.0
+margin_top = 8.0
+margin_bottom = 27.0
 icon = SubResource( 4 )
 
 [node name="ButtonStats" type="Button" parent="ColorRect/VBoxContainer" index="1"]
-margin_top = 49.0
+margin_top = 35.0
 margin_right = 86.0
-margin_bottom = 68.0
+margin_bottom = 54.0
 focus_mode = 0
 theme = ExtResource( 3 )
 enabled_focus_mode = 0
@@ -70,9 +74,9 @@ text = "Stats"
 icon = SubResource( 1 )
 
 [node name="ButtonSettings" type="Button" parent="ColorRect/VBoxContainer" index="2"]
-margin_top = 72.0
+margin_top = 62.0
 margin_right = 86.0
-margin_bottom = 91.0
+margin_bottom = 81.0
 focus_mode = 0
 theme = ExtResource( 3 )
 enabled_focus_mode = 0
@@ -80,9 +84,9 @@ text = "Settings"
 icon = SubResource( 2 )
 
 [node name="ButtonExit" type="Button" parent="ColorRect/VBoxContainer" index="3"]
-margin_top = 95.0
+margin_top = 89.0
 margin_right = 86.0
-margin_bottom = 114.0
+margin_bottom = 108.0
 focus_mode = 0
 theme = ExtResource( 3 )
 enabled_focus_mode = 0

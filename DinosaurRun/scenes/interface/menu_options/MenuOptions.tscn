@@ -22,11 +22,12 @@ text = "Options"
 [node name="VBoxContainer" parent="ColorRect" index="1"]
 margin_left = -115.0
 margin_right = 114.0
+custom_constants/separation = 20
 
 [node name="Resolution" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="0"]
-margin_top = 21.0
+margin_top = 19.0
 margin_right = 229.0
-margin_bottom = 40.0
+margin_bottom = 38.0
 alignment = 1
 
 [node name="LabelResolution" type="Label" parent="ColorRect/VBoxContainer/Resolution" index="0"]
@@ -46,9 +47,9 @@ enabled_focus_mode = 0
 text = "1920x1080"
 
 [node name="FullScreen" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="1"]
-margin_top = 44.0
+margin_top = 58.0
 margin_right = 229.0
-margin_bottom = 68.0
+margin_bottom = 82.0
 alignment = 1
 
 [node name="LabelFullscreen" type="Label" parent="ColorRect/VBoxContainer/FullScreen" index="0"]
@@ -66,9 +67,10 @@ focus_mode = 0
 enabled_focus_mode = 0
 
 [node name="Borderless" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="2"]
-margin_top = 72.0
+visible = false
+margin_top = 83.0
 margin_right = 229.0
-margin_bottom = 96.0
+margin_bottom = 107.0
 alignment = 1
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer/Borderless" index="0"]
@@ -87,9 +89,9 @@ enabled_focus_mode = 0
 
 [node name="ButtonMainMenu" parent="ColorRect/VBoxContainer" index="3" instance=ExtResource( 3 )]
 margin_left = 74.0
-margin_top = 100.0
+margin_top = 102.0
 margin_right = 155.0
-margin_bottom = 119.0
+margin_bottom = 121.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 0
