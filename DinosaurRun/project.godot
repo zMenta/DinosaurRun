@@ -66,6 +66,10 @@ config/name="DinosaurRun"
 run/main_scene="res://main/Main.tscn"
 config/icon="res://scenes/player/assets/Dino.png"
 
+[autoload]
+
+GlobalSignals="*res://common/autoloads/GlobalSignals.gd"
+
 [display]
 
 window/size/width=320
