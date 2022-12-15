@@ -22,6 +22,7 @@ var total_points_made := 0
 
 
 func _ready() -> void:
+	GlobalSignals.connect("coin_obtained", self, "_on_Coin_obtained")
 	_create_or_load_save()
 
 
@@ -75,6 +76,9 @@ func _on_Player_died():
 	_validade_highscore(points)
 	_save_game()
 
+
+func _on_Coin_obtained() -> void:
+	print("player got coin, global signal. Noice")
 
 
 func _on_SpeedIncreaseTimer_timeout():
