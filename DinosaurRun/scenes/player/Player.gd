@@ -56,3 +56,5 @@ func revive() -> void:
 func _on_HitBox_area_entered(area:Area2D) -> void:
 	if area.name == "ObstacleHitbox":
 		death()
+		
+	
