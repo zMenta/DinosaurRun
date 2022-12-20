@@ -19,7 +19,8 @@ var _save : SaveData
 var points := 0
 var highscore := 0 setget set_highscore
 var total_points_made := 0
-var coins := 0
+var total_coins := 0
+var current_coins := 0
 
 
 func _ready() -> void:
@@ -71,15 +72,19 @@ func _on_Player_died():
 	map.stop_world()
 	obstacle_manager.stop_obstacles()
 	point_timer.stop()
+	menu_gameover.set_label_coin(current_coins)
 	menu_gameover.set_label_score(points)
 	menu_gameover.visible = true
+	total_coins += current_coins
+	current_coins = 0
 	total_points_made += points
 	_validade_highscore(points)
 	_save_game()
 
 
 func _on_Coin_obtained() -> void:
-	coins += 1
+	current_coins += 1
+	interface.update_coin(current_coins)
 
 
 func _on_SpeedIncreaseTimer_timeout():
@@ -104,6 +109,7 @@ func _on_MenuMain_buttonExit_pressed() -> void:
 func _on_MenuGameOver_buttonRestart_pressed() -> void:
 	menu_gameover.visible = false
 	obstacle_manager.restart_obstacles()
+	interface.update_coin(current_coins)
 	map.restart_world()
 	_start_game()
 	player.revive_player()
