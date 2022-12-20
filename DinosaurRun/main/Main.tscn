@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/world/map/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/world/obstacles/ObstacleManager.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://scenes/interface/menu_gameover/MenuGameOver.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/interface/menu_options/MenuOptions.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/interface/menu_stats/MenuStats.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/world/coin/Coin.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -20,15 +19,6 @@ script = ExtResource( 3 )
 position = Vector2( 24, 158 )
 
 [node name="ObstacleManager" parent="." instance=ExtResource( 2 )]
-
-[node name="Coin" parent="ObstacleManager" instance=ExtResource( 10 )]
-position = Vector2( 396, 145 )
-
-[node name="Coin2" parent="ObstacleManager" instance=ExtResource( 10 )]
-position = Vector2( 450, 145 )
-
-[node name="Coin3" parent="ObstacleManager" instance=ExtResource( 10 )]
-position = Vector2( 511, 144 )
 
 [node name="SpeedIncreaseTimer" type="Timer" parent="."]
 wait_time = 0.1

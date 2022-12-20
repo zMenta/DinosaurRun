@@ -19,6 +19,7 @@ var _save : SaveData
 var points := 0
 var highscore := 0 setget set_highscore
 var total_points_made := 0
+var coins := 0
 
 
 func _ready() -> void:
@@ -78,7 +79,7 @@ func _on_Player_died():
 
 
 func _on_Coin_obtained() -> void:
-	print("player got coin, global signal. Noice")
+	coins += 1
 
 
 func _on_SpeedIncreaseTimer_timeout():

@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 func _on_Coin_body_entered(body: Node) -> void:
 	if body is Player:
 		GlobalSignals.emit_signal("coin_obtained")
+		queue_free()
 
 
 func _on_VisibilityNotifier2D_screen_exited() -> void:
