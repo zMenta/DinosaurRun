@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://common/menu_icons/menu_icons.png" type="Texture" id=1]
 [ext_resource path="res://scenes/interface/menu/menu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://common/theme/main_theme.tres" type="Theme" id=3]
 [ext_resource path="res://scenes/interface/menu_main/MenuMain.gd" type="Script" id=4]
-[ext_resource path="res://scenes/interface/button/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/interface/interface_commons/button/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/interface/interface_commons/coin_counter/CoinCounter.tscn" type="PackedScene" id=6]
 
 [sub_resource type="AtlasTexture" id=4]
 resource_local_to_scene = true
@@ -27,17 +28,21 @@ region = Rect2( 48, 0, 16, 16 )
 script = ExtResource( 4 )
 
 [node name="LabelTitle" parent="ColorRect" index="0"]
-visible = false
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 40.0
-margin_bottom = 13.0
-text = ""
+margin_left = 28.0
+margin_right = 119.0
+text = "Dinossaur Run"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" index="1"]
-margin_left = 8.0
-margin_right = 96.0
-margin_bottom = 40.0
+[node name="CoinContainer" parent="ColorRect" index="1" instance=ExtResource( 6 )]
+margin_left = -167.0
+margin_top = 5.0
+margin_right = -93.0
+margin_bottom = 45.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" index="2"]
+margin_left = -157.0
+margin_top = -17.0
+margin_right = -28.0
+margin_bottom = 23.0
 
 [node name="LabelTitle" type="Label" parent="ColorRect/HBoxContainer" index="0"]
 margin_top = 13.0
@@ -54,7 +59,7 @@ rect_min_size = Vector2( 55, 0 )
 text = "0"
 clip_text = true
 
-[node name="VBoxContainer" parent="ColorRect" index="2"]
+[node name="VBoxContainer" parent="ColorRect" index="3"]
 margin_top = 32.0
 custom_constants/separation = 8
 
