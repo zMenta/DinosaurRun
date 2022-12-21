@@ -2,12 +2,16 @@ extends Node2D
 
 export(PackedScene) var obstacle_small
 export(PackedScene) var obstacle_big
+export(PackedScene) var CoinPattern
 export(float) var base_obstacle_speed := 120.0
 export(float) var min_spawn_time := 1.2
 
 onready var spawn_timer := $SpawnTimer
 onready var spawn_position := $SpawnPosition
+onready var coin_spawn_position1 := $CoinSpawnPosition1
+onready var coin_spawn_position2 := $CoinSpawnPosition2
 onready var obstacles := [obstacle_small, obstacle_big]
+onready var coin_positions := [coin_spawn_position1, coin_spawn_position2]
 onready var obstacles_group := $ObstaclesGroup
 
 onready var current_speed := base_obstacle_speed
@@ -49,9 +53,18 @@ func start_obstacles() -> void:
 		
 func _on_SpawnTimer_timeout():
 	randomize()
+
+	# Obstacles
 	var obstacle = obstacles[randi() % obstacles.size()]
 	obstacle = obstacle.instance()
 	
 	obstacle.speed = base_obstacle_speed
 	obstacle.global_position = spawn_position.global_position
 	obstacles_group.add_child(obstacle)
+
+
+	# Coins
+	var coins = CoinPattern.instance()
+	coins.global_position = coin_positions[randi() % coin_positions.size()].global_position
+	coins.speed = base_obstacle_speed
+	obstacles_group.add_child(coins)
