@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/player/assets/Dino.png" type="Texture" id=2]
 [ext_resource path="res://scenes/player/assets/DinoShadow.png" type="Texture" id=3]
 [ext_resource path="res://scenes/player/PlayerNode.gd" type="Script" id=4]
-[ext_resource path="res://scenes/world/coin/coin.png" type="Texture" id=5]
+[ext_resource path="res://scenes/player/assets/hats/hat1.png" type="Texture" id=5]
 [ext_resource path="res://scenes/player/Hats.tres" type="Resource" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -72,7 +72,7 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="SpriteHat" type="Sprite" parent="Player/Sprite"]
-position = Vector2( 5, -23 )
+position = Vector2( 6, -20 )
 texture = ExtResource( 5 )
 
 [node name="Sprites" type="Node2D" parent="Player"]

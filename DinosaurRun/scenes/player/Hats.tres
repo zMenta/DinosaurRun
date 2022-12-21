@@ -1,9 +1,10 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://common/resources/Hats.gd" type="Script" id=1]
-[ext_resource path="res://scenes/world/coin/coin.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://scenes/player/assets/hats/hat1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/player/assets/hats/hat2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/player/assets/hats/hat3.png" type="Texture" id=4]
 
 [resource]
 script = ExtResource( 1 )
-hats_textures = [ ExtResource( 3 ), ExtResource( 2 ) ]
+hats_textures = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
