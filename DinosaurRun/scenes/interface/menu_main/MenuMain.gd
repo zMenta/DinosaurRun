@@ -6,6 +6,11 @@ signal buttonStats_pressed
 signal buttonExit_pressed   
 
 onready var highcsore_label := $ColorRect/HBoxContainer/LabelHighscoreValue
+onready var coin_container := $ColorRect/CoinContainer
+
+
+func set_coins_label(coin_value: int) -> void:
+	coin_container.set_coin_value(coin_value)
 
 
 func set_highscore_label(highscore_value: int) -> void:

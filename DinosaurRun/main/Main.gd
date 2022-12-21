@@ -19,7 +19,7 @@ var _save : SaveData
 var points := 0
 var highscore := 0 setget set_highscore
 var total_points_made := 0
-var total_coins := 0
+var total_coins := 0 setget set_total_coins
 var current_coins := 0
 
 
@@ -38,6 +38,7 @@ func _create_or_load_save() -> void:
 		_save.write_savegame()
 
 	set_highscore(_save.player_stats.highscore)
+	set_total_coins(_save.player_stats.total_coins)
 	total_points_made = _save.player_stats.total_points_made
 	menu_stats.save = _save
 	menu_options.save = _save
@@ -46,6 +47,7 @@ func _create_or_load_save() -> void:
 func _save_game() -> void:
 	_save.player_stats.highscore = highscore
 	_save.player_stats.total_points_made = total_points_made
+	_save.player_stats.total_coins = total_coins
 	_save.write_savegame()
 
 
@@ -68,6 +70,11 @@ func set_highscore(new_value: int) -> void:
 	menu_main.set_highscore_label(highscore)
 
 
+func set_total_coins(new_value: int) -> void:
+	total_coins = new_value
+	menu_main.set_coins_label(total_coins)
+
+
 func _on_Player_died():
 	map.stop_world()
 	obstacle_manager.stop_obstacles()
@@ -75,7 +82,7 @@ func _on_Player_died():
 	menu_gameover.set_label_coin(current_coins)
 	menu_gameover.set_label_score(points)
 	menu_gameover.visible = true
-	total_coins += current_coins
+	set_total_coins(total_coins + current_coins)
 	current_coins = 0
 	total_points_made += points
 	_validade_highscore(points)
