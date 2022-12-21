@@ -39,6 +39,7 @@ func _create_or_load_save() -> void:
 
 	set_highscore(_save.player_stats.highscore)
 	set_total_coins(_save.player_stats.total_coins)
+	player.current_hat_index = _save.player_stats.current_hat_index
 	total_points_made = _save.player_stats.total_points_made
 	menu_stats.save = _save
 	menu_options.save = _save
