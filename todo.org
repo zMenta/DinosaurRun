@@ -24,6 +24,7 @@
   - [ ] On player jump
   - [ ] Coin pickup
   - [ ] Spending money
+
 *** [ ] Animations [66%]
 - [ ] Menu Animations
 - [X] Coin Animations

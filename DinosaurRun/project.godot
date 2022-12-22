@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://common/resources/GameSettings.gd"
 }, {
 "base": "Resource",
+"class": "HatItem",
+"language": "GDScript",
+"path": "res://common/resources/HatItem.gd"
+}, {
+"base": "Resource",
 "class": "Hats",
 "language": "GDScript",
 "path": "res://common/resources/Hats.gd"
@@ -59,6 +64,7 @@ _global_script_class_icons={
 "Coin": "",
 "EnviromentLayer": "",
 "GameSettings": "",
+"HatItem": "",
 "Hats": "",
 "Obstacle": "",
 "Player": "",
@@ -75,6 +81,10 @@ config/icon="res://scenes/player/assets/Dino.png"
 [autoload]
 
 GlobalSignals="*res://common/autoloads/GlobalSignals.gd"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
 
 [display]
 
