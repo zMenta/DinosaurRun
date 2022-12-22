@@ -14,6 +14,7 @@ onready var menu_main := $Interfaces/MenuMain
 onready var menu_gameover := $Interfaces/MenuGameOver
 onready var menu_options := $Interfaces/MenuOptions
 onready var menu_stats := $Interfaces/MenuStats
+onready var menu_hats := $Interfaces/MenuHats
 
 var _save : SaveData
 var points := 0
@@ -160,3 +161,13 @@ func _on_MenuStats_buttonResetStats_pressed() -> void:
 func _on_MenuOptions_game_settings_saved(save_settings: SaveData) -> void:
 	_save.game_settings = save_settings.game_settings
 	_save_game()
+
+
+func _on_MenuMain_buttonShop_pressed():
+	menu_main.visible = false
+	menu_hats.visible = true
+
+
+func _on_MenuHats_mainMenuButton_pressed():
+	menu_main.visible = true
+	menu_hats.visible = false

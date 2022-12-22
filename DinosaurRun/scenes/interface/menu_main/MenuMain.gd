@@ -3,7 +3,8 @@ extends Control
 signal buttonPlay_pressed
 signal buttonSettings_pressed   
 signal buttonStats_pressed   
-signal buttonExit_pressed   
+signal buttonExit_pressed
+signal buttonShop_pressed
 
 onready var highcsore_label := $ColorRect/HBoxContainer/LabelHighscoreValue
 onready var coin_container := $ColorRect/CoinContainer
@@ -31,3 +32,7 @@ func _on_ButtonStats_pressed() -> void:
 
 func _on_ButtonExit_pressed() -> void:
 	emit_signal("buttonExit_pressed")
+
+
+func _on_ButtonShop_pressed():
+	emit_signal("buttonShop_pressed")

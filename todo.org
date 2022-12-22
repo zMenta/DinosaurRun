@@ -1,10 +1,12 @@
 * TODO Dinossaur Run [0%]
 ** [ ] HAT SYSTEM [0/2]
 *** [-] Hat sprites
-  - [-] at least 5 different hats
+  - [-] at least 5 different hats 3/5
 
-*** [-] Shop mechanic [2/4]
-  - [X] Shop Interface
+*** [-] Shop mechanic [1/4]
+  - [-] Shop Interface
+    - [-] Shop Interface Implementation
+    - [ ] Shop Interface button Icon
   - [X] HatItem Resource
   - [ ] Shop buy/equip feature
   - [ ] Save hats purchased and current equipped hat

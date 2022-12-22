@@ -28,8 +28,10 @@ region = Rect2( 48, 0, 16, 16 )
 script = ExtResource( 4 )
 
 [node name="LabelTitle" parent="ColorRect" index="0"]
-margin_left = 28.0
-margin_right = 119.0
+margin_left = 25.0
+margin_top = 5.0
+margin_right = 116.0
+margin_bottom = 18.0
 text = "Dinossaur Run"
 
 [node name="CoinContainer" parent="ColorRect" index="1" instance=ExtResource( 6 )]
@@ -60,38 +62,45 @@ text = "0"
 clip_text = true
 
 [node name="VBoxContainer" parent="ColorRect" index="3"]
-margin_top = 32.0
+margin_top = 24.0
+margin_bottom = -9.0
 custom_constants/separation = 8
 
 [node name="ButtonPlay" parent="ColorRect/VBoxContainer" index="0" instance=ExtResource( 5 )]
-margin_top = 8.0
-margin_bottom = 27.0
+margin_top = 1.0
+margin_bottom = 20.0
 icon = SubResource( 4 )
 
 [node name="ButtonStats" type="Button" parent="ColorRect/VBoxContainer" index="1"]
-margin_top = 35.0
+margin_top = 28.0
 margin_right = 86.0
-margin_bottom = 54.0
+margin_bottom = 47.0
 focus_mode = 0
 theme = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "Stats"
 icon = SubResource( 1 )
 
-[node name="ButtonSettings" type="Button" parent="ColorRect/VBoxContainer" index="2"]
-margin_top = 62.0
+[node name="ButtonShop" parent="ColorRect/VBoxContainer" index="2" instance=ExtResource( 5 )]
+margin_top = 55.0
+margin_bottom = 71.0
+text = "Shop"
+icon = null
+
+[node name="ButtonSettings" type="Button" parent="ColorRect/VBoxContainer" index="3"]
+margin_top = 79.0
 margin_right = 86.0
-margin_bottom = 81.0
+margin_bottom = 98.0
 focus_mode = 0
 theme = ExtResource( 3 )
 enabled_focus_mode = 0
 text = "Settings"
 icon = SubResource( 2 )
 
-[node name="ButtonExit" type="Button" parent="ColorRect/VBoxContainer" index="3"]
-margin_top = 89.0
+[node name="ButtonExit" type="Button" parent="ColorRect/VBoxContainer" index="4"]
+margin_top = 106.0
 margin_right = 86.0
-margin_bottom = 108.0
+margin_bottom = 125.0
 focus_mode = 0
 theme = ExtResource( 3 )
 enabled_focus_mode = 0
@@ -100,5 +109,6 @@ icon = SubResource( 3 )
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/ButtonPlay" to="." method="_on_ButtonPlay_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/ButtonStats" to="." method="_on_ButtonStats_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonShop" to="." method="_on_ButtonShop_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/ButtonExit" to="." method="_on_ButtonExit_pressed"]
