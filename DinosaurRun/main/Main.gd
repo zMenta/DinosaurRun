@@ -164,11 +164,17 @@ func _on_MenuOptions_game_settings_saved(save_settings: SaveData) -> void:
 	_save_game()
 
 
-func _on_MenuMain_buttonShop_pressed():
+func _on_MenuMain_buttonShop_pressed() -> void:
 	menu_main.visible = false
 	menu_hats.visible = true
 
 
-func _on_MenuHats_mainMenuButton_pressed():
+func _on_MenuHats_mainMenuButton_pressed() -> void:
 	menu_main.visible = true
 	menu_hats.visible = false
+
+
+func _on_MenuHats_buyButton_pressed(hat_index:int) -> void:
+	player.current_hat_index = hat_index
+	_save.player_stats.current_hat_index = hat_index
+	_save_game()

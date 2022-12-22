@@ -1,6 +1,6 @@
 extends Control
 
-signal buyButton_pressed(save)
+signal buyButton_pressed(hat_index)
 signal mainMenuButton_pressed
 
 export(Resource) var hats_resource
@@ -9,6 +9,8 @@ onready var hat_price_label := $ColorRect/VBoxContainer/HBoxContainer2/PriceValu
 
 var save: SaveData setget set_save_data
 var hat_index: int = 0
+
+var bought_hats: Array # Array[HatItem]
 
 
 func _ready() -> void:
@@ -26,8 +28,7 @@ func _on_ButtonGoBack_pressed():
 
 
 func _on_ButtonBuy_pressed():
-	pass
-	# emit_signal("buyButton_pressed")
+	emit_signal("buyButton_pressed", hat_index)
 
 
 func _on_ButtonNext_pressed():

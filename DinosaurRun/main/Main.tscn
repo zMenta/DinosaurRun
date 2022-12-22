@@ -60,4 +60,5 @@ visible = false
 [connection signal="game_settings_saved" from="Interfaces/MenuOptions" to="." method="_on_MenuOptions_game_settings_saved"]
 [connection signal="buttonMainMenu_pressed" from="Interfaces/MenuStats" to="." method="_on_MenuStats_buttonMainMenu_pressed"]
 [connection signal="buttonResetStats_pressed" from="Interfaces/MenuStats" to="." method="_on_MenuStats_buttonResetStats_pressed"]
+[connection signal="buyButton_pressed" from="Interfaces/MenuHats" to="." method="_on_MenuHats_buyButton_pressed"]
 [connection signal="mainMenuButton_pressed" from="Interfaces/MenuHats" to="." method="_on_MenuHats_mainMenuButton_pressed"]
