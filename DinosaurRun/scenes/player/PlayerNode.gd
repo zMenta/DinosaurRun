@@ -10,7 +10,7 @@ var current_hat_index := 0 setget set_hat
 
 func set_hat(hat_index: int) -> void:
 	current_hat_index = hat_index
-	sprite_hat.texture = hats_resource.hats_textures[hat_index]
+	sprite_hat.texture = hats_resource.hats_textures[hat_index].texture
 
 
 func _on_Player_died():
