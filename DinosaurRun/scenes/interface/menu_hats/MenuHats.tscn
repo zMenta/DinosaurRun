@@ -22,7 +22,7 @@ region = Rect2( 80, 0, 16, 16 )
 
 [node name="MenuHats" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
-hats_array = ExtResource( 6 )
+hats_resource = ExtResource( 6 )
 
 [node name="LabelTitle" parent="ColorRect" index="0"]
 margin_left = 3.0
