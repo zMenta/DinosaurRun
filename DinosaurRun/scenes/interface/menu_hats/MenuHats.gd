@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func set_save_data(new_save: SaveData) -> void:
 	save = new_save
-	hat_index = save.player_stats.current_hat_index
+	hat_index = save.hats.current_hat_index
 	_set_hat_texture(hat_index)
 
 
@@ -52,7 +52,7 @@ func _set_hat_texture(index: int) -> void:
 	var hat = hats_resource.hats[index] as HatItem
 	hat_texture.texture = hat.texture
 
-	if index in hats_resource.hats_id_owned:
+	if index in hats_resource.hats_index_owned:
 		buy_button.text = "Wear"
 		hat_price_label.text = "Owned"
 

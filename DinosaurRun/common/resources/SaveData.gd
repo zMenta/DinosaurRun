@@ -6,6 +6,7 @@ const SAVE_GAME_PATH := "user://save.tres"
 
 export var player_stats: Resource
 export var game_settings: Resource
+export var hats: Resource
 
 
 func write_savegame() -> void:

@@ -36,11 +36,12 @@ func _create_or_load_save() -> void:
 		_save = SaveData.new()
 		_save.player_stats = PlayerStats.new()
 		_save.game_settings = GameSettings.new()
+		_save.hats = Hats.new()
 		_save.write_savegame()
 
 	set_highscore(_save.player_stats.highscore)
 	set_total_coins(_save.player_stats.total_coins)
-	player.current_hat_index = _save.player_stats.current_hat_index
+	player.current_hat_index = _save.hats.current_hat_index
 	total_points_made = _save.player_stats.total_points_made
 	menu_stats.save = _save
 	menu_options.save = _save
@@ -176,5 +177,5 @@ func _on_MenuHats_mainMenuButton_pressed() -> void:
 
 func _on_MenuHats_buyButton_pressed(hat_index:int) -> void:
 	player.current_hat_index = hat_index
-	_save.player_stats.current_hat_index = hat_index
+	_save.hats.current_hat_index = hat_index
 	_save_game()

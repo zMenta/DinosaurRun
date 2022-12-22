@@ -21,5 +21,6 @@ price = 850
 
 [resource]
 script = ExtResource( 1 )
+current_hat_index = 0
 hats = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
-hats_id_owned = [ 0 ]
+hats_index_owned = [ 0 ]
