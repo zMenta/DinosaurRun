@@ -1,1 +1,30 @@
-* TODO finish dinossaur run
+* TODO Dinossaur Run [0%]
+** [ ] HAT SYSTEM [0/2]
+*** [-] Hat sprites
+  - [-] at least 5 different hats
+
+*** [-] Shop mechanic [1/3]
+  - [X] Shop Interface
+  - [ ] Shop buy/equip feature
+  - [ ] Save hats purchased and current equipped hat
+
+
+** [ ] Music [0%]
+*** [ ] Background music
+
+*** [ ] SFX [0%]
+  - [ ] Button Presses
+  - [ ] Coin Pickup
+  - [ ] Jumping
+  - [ ] Buying / spending money
+
+
+** [ ] FInal Polish [0%]
+*** [ ] Particle effects [0%]
+  - [ ] On player jump
+  - [ ] Coin pickup
+  - [ ] Spending money
+*** [ ] Animations [66%]
+- [ ] Menu Animations
+- [X] Coin Animations
+- [X] Player Animation
