@@ -44,6 +44,7 @@ func _create_or_load_save() -> void:
 	total_points_made = _save.player_stats.total_points_made
 	menu_stats.save = _save
 	menu_options.save = _save
+	menu_hats.save = _save
 
 
 func _save_game() -> void:

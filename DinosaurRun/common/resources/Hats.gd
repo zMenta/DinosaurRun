@@ -1,4 +1,4 @@
 class_name Hats
 extends Resource
 
-export(Array, Resource) var hats_textures
+export(Array, Resource) var hats
