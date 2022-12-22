@@ -8,7 +8,7 @@
     - [-] Shop Interface Implementation
     - [ ] Shop Interface button Icon
   - [X] HatItem Resource
-  - [ ] Shop buy/equip feature
+  - [-] Shop buy/equip feature
   - [ ] Save hats purchased and current equipped hat
 
 
@@ -32,3 +32,4 @@
 - [ ] Menu Animations
 - [X] Coin Animations
 - [X] Player Animation
+*** [ ] Game startup image
