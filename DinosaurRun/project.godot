@@ -76,10 +76,6 @@ config/icon="res://scenes/player/assets/Dino.png"
 
 GlobalSignals="*res://common/autoloads/GlobalSignals.gd"
 
-[debug]
-
-gdscript/warnings/return_value_discarded=false
-
 [display]
 
 window/size/width=320
