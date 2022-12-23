@@ -1,0 +1,43 @@
+* TODO Dinossaur Run [0%]
+** [ ] Bugs
+    - [ ] Coins Pickup
+        Some coins are being picked up wrong. Sometimes they count as 4x coins instead of 3 coins. Check the pattern coin scene.
+        I think it might be that the coins are close together, maybe glitching the area2D body entered trigger.
+
+
+** [ ] HAT SYSTEM [1/2]
+*** [-] Hat sprites
+  - [-] at least 5 different hats 3/5
+
+*** [X] Shop mechanic [6/6]
+  - [X] Shop Interface
+    - [X] Shop Interface Implementation
+    - [X] Shop Interface button Icon
+  - [X] Shop buy feature
+  - [X] Shop hats being equipped
+  - [X] Save hats purchased and current equipped hat on SaveData
+  - [X] HatItem Resource
+  - [X] Hat selection feature
+
+
+** [ ] Music [0%]
+*** [ ] Background music
+
+*** [ ] SFX [0%]
+  - [ ] Button Presses
+  - [ ] Coin Pickup
+  - [ ] Jumping
+  - [ ] Buying / spending money
+
+
+** [ ] Final Polish [0%]
+*** [ ] Particle effects [0%]
+  - [ ] On player jump
+  - [ ] Coin pickup
+  - [ ] Spending money
+
+*** [ ] Animations [66%]
+- [ ] Menu Animations
+- [X] Coin Animations
+- [X] Player Animation
+*** [ ] Game startup image

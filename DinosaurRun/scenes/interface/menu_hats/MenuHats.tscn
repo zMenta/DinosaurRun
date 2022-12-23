@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/interface/menu/menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/world/coin/coin.png" type="Texture" id=2]
+[ext_resource path="res://scenes/interface/interface_commons/button/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://common/menu_icons/menu_icons.png" type="Texture" id=4]
+[ext_resource path="res://scenes/interface/menu_hats/MenuHats.gd" type="Script" id=5]
+[ext_resource path="res://scenes/interface/interface_commons/coin_counter/CoinCounter.tscn" type="PackedScene" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+resource_local_to_scene = true
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+resource_local_to_scene = true
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+resource_local_to_scene = true
+atlas = ExtResource( 4 )
+region = Rect2( 80, 0, 16, 16 )
+
+[node name="MenuHats" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+
+[node name="LabelTitle" parent="ColorRect" index="0"]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 73.0
+margin_bottom = 15.0
+text = "Change Hat"
+
+[node name="VBoxContainer" parent="ColorRect" index="1"]
+margin_left = -55.0
+margin_top = 11.0
+margin_right = 61.0
+margin_bottom = -6.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="0"]
+margin_right = 116.0
+margin_bottom = 64.0
+
+[node name="ButtonPrevious" parent="ColorRect/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 3 )]
+margin_top = 22.0
+margin_right = 16.0
+margin_bottom = 41.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "<-"
+icon = SubResource( 1 )
+icon_align = 1
+
+[node name="HatTextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/HBoxContainer" index="1"]
+margin_left = 20.0
+margin_right = 84.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 2 )
+stretch_mode = 6
+
+[node name="ButtonNext" parent="ColorRect/VBoxContainer/HBoxContainer" index="2" instance=ExtResource( 3 )]
+margin_left = 88.0
+margin_top = 22.0
+margin_right = 104.0
+margin_bottom = 41.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "->"
+icon = SubResource( 2 )
+icon_align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer" index="1"]
+margin_top = 68.0
+margin_right = 116.0
+margin_bottom = 81.0
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer2" index="0"]
+margin_right = 49.0
+margin_bottom = 13.0
+text = "Price: "
+
+[node name="PriceValue" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer2" index="1"]
+margin_left = 53.0
+margin_right = 95.0
+margin_bottom = 13.0
+text = "35 000"
+
+[node name="ButtonBuy" parent="ColorRect/VBoxContainer" index="2" instance=ExtResource( 3 )]
+margin_left = 30.0
+margin_top = 85.0
+margin_right = 85.0
+margin_bottom = 120.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Buy"
+icon = ExtResource( 2 )
+
+[node name="ButtonGoBack" parent="ColorRect/VBoxContainer" index="3" instance=ExtResource( 3 )]
+margin_left = 17.0
+margin_top = 124.0
+margin_right = 98.0
+margin_bottom = 143.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Main Menu"
+icon = SubResource( 3 )
+
+[node name="CoinContainer" parent="." index="1" instance=ExtResource( 7 )]
+margin_right = 97.0
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/ButtonPrevious" to="." method="_on_ButtonPrevious_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/ButtonNext" to="." method="_on_ButtonNext_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonBuy" to="." method="_on_ButtonBuy_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/ButtonGoBack" to="." method="_on_ButtonGoBack_pressed"]

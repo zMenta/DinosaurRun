@@ -29,6 +29,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://common/resources/GameSettings.gd"
 }, {
+"base": "Resource",
+"class": "HatItem",
+"language": "GDScript",
+"path": "res://common/resources/HatItem.gd"
+}, {
+"base": "Resource",
+"class": "Hats",
+"language": "GDScript",
+"path": "res://common/resources/Hats.gd"
+}, {
 "base": "Node2D",
 "class": "Obstacle",
 "language": "GDScript",
@@ -54,6 +64,8 @@ _global_script_class_icons={
 "Coin": "",
 "EnviromentLayer": "",
 "GameSettings": "",
+"HatItem": "",
+"Hats": "",
 "Obstacle": "",
 "Player": "",
 "PlayerStats": "",

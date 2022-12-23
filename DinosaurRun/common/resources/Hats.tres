@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://common/resources/Hats.gd" type="Script" id=1]
+[ext_resource path="res://scenes/player/assets/hats/hat1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/player/assets/hats/hat2.png" type="Texture" id=3]
+[ext_resource path="res://common/resources/HatItem.gd" type="Script" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+price = 0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 4 )
+texture = ExtResource( 2 )
+price = 350
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 4 )
+texture = ExtResource( 3 )
+price = 850
+
+[resource]
+script = ExtResource( 1 )
+current_hat_index = 0
+hats = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
+hats_index_owned = [ 0 ]

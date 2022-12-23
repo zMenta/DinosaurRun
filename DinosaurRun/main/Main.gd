@@ -3,6 +3,7 @@ extends Node2D
 export(float) var speed_increase_value := 0.2
 export(float) var obstacle_spawn_rate_increase := 0.001
 export(int) var points_per_timeout := 1
+export(Resource) var hats_resource
 
 onready var player := $Player
 onready var map := $Map
@@ -14,6 +15,7 @@ onready var menu_main := $Interfaces/MenuMain
 onready var menu_gameover := $Interfaces/MenuGameOver
 onready var menu_options := $Interfaces/MenuOptions
 onready var menu_stats := $Interfaces/MenuStats
+onready var menu_hats := $Interfaces/MenuHats
 
 var _save : SaveData
 var points := 0
@@ -32,16 +34,26 @@ func _create_or_load_save() -> void:
 	if SaveData.save_exist():
 		_save = SaveData.load_savegame() as SaveData
 	else:
-		_save = SaveData.new()
-		_save.player_stats = PlayerStats.new()
-		_save.game_settings = GameSettings.new()
-		_save.write_savegame()
+		_create_save()
 
 	set_highscore(_save.player_stats.highscore)
 	set_total_coins(_save.player_stats.total_coins)
+	player.current_hat_index = _save.hats.current_hat_index
 	total_points_made = _save.player_stats.total_points_made
 	menu_stats.save = _save
 	menu_options.save = _save
+	menu_hats.save = _save
+
+
+func _create_save() -> void:
+	_save = SaveData.new()
+	_save.player_stats = PlayerStats.new()
+	_save.game_settings = GameSettings.new()
+	_save.hats = Hats.new()
+	_save.hats.hats = hats_resource.hats.duplicate(true)
+	_save.write_savegame()
+
+	player.current_hat_index = _save.hats.current_hat_index
 
 
 func _save_game() -> void:
@@ -147,15 +159,27 @@ func _on_MenuStats_buttonMainMenu_pressed() -> void:
 
 
 func _on_MenuStats_buttonResetStats_pressed() -> void:
-	_save = SaveData.new()
-	_save.player_stats = PlayerStats.new()
-	_save.write_savegame()
-
-	set_highscore(_save.player_stats.highscore)
-	total_points_made = _save.player_stats.total_points_made
-	menu_stats.save = _save
+	_create_save()
+	get_tree().reload_current_scene()
 
 
 func _on_MenuOptions_game_settings_saved(save_settings: SaveData) -> void:
 	_save.game_settings = save_settings.game_settings
+	_save_game()
+
+
+func _on_MenuMain_buttonShop_pressed() -> void:
+	menu_main.visible = false
+	menu_hats.visible = true
+
+
+func _on_MenuHats_mainMenuButton_pressed() -> void:
+	menu_main.visible = true
+	menu_hats.visible = false
+
+
+func _on_MenuHats_buyButton_pressed(save: SaveData) -> void:
+	player.current_hat_index = save.hats.current_hat_index
+	_save.hats = save.hats
+	set_total_coins(save.player_stats.total_coins)
 	_save_game()
