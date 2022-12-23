@@ -3,10 +3,10 @@
 *** [-] Hat sprites
   - [-] at least 5 different hats 3/5
 
-*** [-] Shop mechanic [2/5]
-  - [-] Shop Interface
-    - [-] Shop Interface Implementation
-    - [ ] Shop Interface button Icon
+*** [-] Shop mechanic [3/5]
+  - [X] Shop Interface
+    - [X] Shop Interface Implementation
+    - [X] Shop Interface button Icon
   - [-] Shop buy/equip feature
   - [ ] Save hats purchased and current equipped hat
   - [X] HatItem Resource
