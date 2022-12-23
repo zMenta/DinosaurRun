@@ -44,6 +44,7 @@ func _create_or_load_save() -> void:
 	menu_options.save = _save
 	menu_hats.save = _save
 
+
 func _create_save() -> void:
 	_save = SaveData.new()
 	_save.player_stats = PlayerStats.new()
@@ -162,7 +163,6 @@ func _on_MenuStats_buttonResetStats_pressed() -> void:
 	get_tree().reload_current_scene()
 
 
-
 func _on_MenuOptions_game_settings_saved(save_settings: SaveData) -> void:
 	_save.game_settings = save_settings.game_settings
 	_save_game()
@@ -181,4 +181,5 @@ func _on_MenuHats_mainMenuButton_pressed() -> void:
 func _on_MenuHats_buyButton_pressed(save: SaveData) -> void:
 	player.current_hat_index = save.hats.current_hat_index
 	_save.hats = save.hats
+	set_total_coins(save.player_stats.total_coins)
 	_save_game()
