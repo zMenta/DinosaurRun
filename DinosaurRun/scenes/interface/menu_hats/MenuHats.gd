@@ -27,8 +27,9 @@ func _on_ButtonGoBack_pressed():
 
 
 func _on_ButtonBuy_pressed():
+	if not hat_index in hats_resource.hats_index_owned:
+		hats_resource.hats_index_owned.append(hat_index)
 
-	hats_resource.hats_index_owned.append(hat_index)
 	hats_resource.current_hat_index = hat_index
 	_set_hat_texture(hat_index)
 	save.hats = hats_resource

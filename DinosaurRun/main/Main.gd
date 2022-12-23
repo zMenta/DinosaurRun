@@ -36,12 +36,7 @@ func _create_or_load_save() -> void:
 		_save = SaveData.load_savegame() as SaveData
 	else:
 		print("creating a new save")
-		_save = SaveData.new()
-		_save.player_stats = PlayerStats.new()
-		_save.game_settings = GameSettings.new()
-		_save.hats = Hats.new()
-		_save.hats.hats = hats_resource.hats
-		_save.write_savegame()
+		_create_save()
 
 	set_highscore(_save.player_stats.highscore)
 	set_total_coins(_save.player_stats.total_coins)
@@ -50,6 +45,16 @@ func _create_or_load_save() -> void:
 	menu_stats.save = _save
 	menu_options.save = _save
 	menu_hats.save = _save
+
+func _create_save() -> void:
+	_save = SaveData.new()
+	_save.player_stats = PlayerStats.new()
+	_save.game_settings = GameSettings.new()
+	_save.hats = Hats.new()
+	_save.hats.hats = hats_resource.hats.duplicate(true)
+	_save.write_savegame()
+
+	player.current_hat_index = _save.hats.current_hat_index
 
 
 func _save_game() -> void:
@@ -155,13 +160,18 @@ func _on_MenuStats_buttonMainMenu_pressed() -> void:
 
 
 func _on_MenuStats_buttonResetStats_pressed() -> void:
-	_save = SaveData.new()
-	_save.player_stats = PlayerStats.new()
-	_save.write_savegame()
+	# _save = SaveData.new()
+	# _save.player_stats = PlayerStats.new()
+	# _save.hats = Hats.new()
+	# _save.hats.hats = hats_resource.hats
+	# _save.write_savegame()
 
-	set_highscore(_save.player_stats.highscore)
-	total_points_made = _save.player_stats.total_points_made
-	menu_stats.save = _save
+	# set_highscore(_save.player_stats.highscore)
+	# total_points_made = _save.player_stats.total_points_made
+	# menu_stats.save = _save
+	_create_save()
+	_create_or_load_save()
+
 
 
 func _on_MenuOptions_game_settings_saved(save_settings: SaveData) -> void:
