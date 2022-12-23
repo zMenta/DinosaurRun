@@ -32,10 +32,8 @@ func _ready() -> void:
 
 func _create_or_load_save() -> void:
 	if SaveData.save_exist():
-		print("loading save")
 		_save = SaveData.load_savegame() as SaveData
 	else:
-		print("creating a new save")
 		_create_save()
 
 	set_highscore(_save.player_stats.highscore)
@@ -160,17 +158,8 @@ func _on_MenuStats_buttonMainMenu_pressed() -> void:
 
 
 func _on_MenuStats_buttonResetStats_pressed() -> void:
-	# _save = SaveData.new()
-	# _save.player_stats = PlayerStats.new()
-	# _save.hats = Hats.new()
-	# _save.hats.hats = hats_resource.hats
-	# _save.write_savegame()
-
-	# set_highscore(_save.player_stats.highscore)
-	# total_points_made = _save.player_stats.total_points_made
-	# menu_stats.save = _save
 	_create_save()
-	_create_or_load_save()
+	get_tree().reload_current_scene()
 
 
 
