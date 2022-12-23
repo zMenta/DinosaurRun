@@ -3,10 +3,12 @@ extends Control
 signal buyButton_pressed(hat_index)
 signal mainMenuButton_pressed
 
-export(Resource) var hats_resource
 onready var hat_texture := $ColorRect/VBoxContainer/HBoxContainer/HatTextureRect
 onready var hat_price_label := $ColorRect/VBoxContainer/HBoxContainer2/PriceValue
 onready var buy_button := $ColorRect/VBoxContainer/ButtonBuy
+onready var coin_container := $CoinContainer
+
+export(Resource) var hats_resource
 
 var save: SaveData setget set_save_data
 var hat_index: int = 0
@@ -16,12 +18,14 @@ var bought_hats: Array # Array[HatItem]
 
 func _ready() -> void:
 	hats_resource = hats_resource as Hats
+var total_coins := 0
 
 
 func set_save_data(new_save: SaveData) -> void:
 	save = new_save
 	hat_index = save.hats.current_hat_index
 	_set_hat_texture(hat_index)
+	_set_coins(save.player_stats.total_coins)
 
 
 func _on_ButtonGoBack_pressed():
@@ -59,3 +63,8 @@ func _set_hat_texture(index: int) -> void:
 	else:
 		buy_button.text = "Buy"
 		hat_price_label.text = str(hat.price)
+
+
+func _set_coins(new_value) -> void:
+	total_coins = new_value
+	coin_container.set_coin_value(save.player_stats.total_coins)
