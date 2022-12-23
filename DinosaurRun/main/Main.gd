@@ -3,6 +3,7 @@ extends Node2D
 export(float) var speed_increase_value := 0.2
 export(float) var obstacle_spawn_rate_increase := 0.001
 export(int) var points_per_timeout := 1
+export(Resource) var hats_resource
 
 onready var player := $Player
 onready var map := $Map
@@ -31,12 +32,15 @@ func _ready() -> void:
 
 func _create_or_load_save() -> void:
 	if SaveData.save_exist():
+		print("loading save")
 		_save = SaveData.load_savegame() as SaveData
 	else:
+		print("creating a new save")
 		_save = SaveData.new()
 		_save.player_stats = PlayerStats.new()
 		_save.game_settings = GameSettings.new()
 		_save.hats = Hats.new()
+		_save.hats.hats = hats_resource.hats
 		_save.write_savegame()
 
 	set_highscore(_save.player_stats.highscore)
@@ -175,7 +179,7 @@ func _on_MenuHats_mainMenuButton_pressed() -> void:
 	menu_hats.visible = false
 
 
-func _on_MenuHats_buyButton_pressed(hat_index:int) -> void:
-	player.current_hat_index = hat_index
-	_save.hats.current_hat_index = hat_index
+func _on_MenuHats_buyButton_pressed(save: SaveData) -> void:
+	player.current_hat_index = save.hats.current_hat_index
+	_save.hats = save.hats
 	_save_game()
