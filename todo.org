@@ -8,7 +8,7 @@
     - [X] Shop Interface Implementation
     - [X] Shop Interface button Icon
   - [-] Shop buy/equip feature
-  - [ ] Save hats purchased and current equipped hat on SaveData
+  - [-] Save hats purchased and current equipped hat on SaveData
   - [X] HatItem Resource
   - [X] Hat selection feature
 
