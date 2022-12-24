@@ -5,25 +5,23 @@
         I think it might be that the coins are close together, maybe glitching the area2D body entered trigger.
 
 
-** [ ] HAT SYSTEM [1/2]
-*** [X] Hat sprites
+** TODO Hat System [1/2]
+*** DONE Hat sprites
   - [X] at least 5 different hats
 
-*** [ ] Shop mechanic [5/6]
+*** TODO Shop mechanic [5/6]
   - [-] Shop Interface
     - [X] Shop Interface Implementation
     - [X] Shop Interface button Icon
-    - [-] Shop equip icon instead of coin icon
+    - [ ] Shop equip icon instead of coin icon
   - [X] Shop buy feature
   - [X] Shop hats being equipped
   - [X] Save hats purchased and current equipped hat on SaveData
   - [X] HatItem Resource
   - [X] Hat selection feature
 
-
 ** [ ] Music [0%]
 *** [ ] Background music
-
 *** [ ] SFX [0%]
   - [ ] Button Presses
   - [ ] Coin Pickup
