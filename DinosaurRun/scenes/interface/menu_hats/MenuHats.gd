@@ -1,5 +1,8 @@
 extends Control
 
+export(Texture) var coin_texture
+export(Texture) var equip_hat_texture
+
 signal buyButton_pressed(save)
 signal mainMenuButton_pressed
 
@@ -67,10 +70,12 @@ func _set_hat_texture(index: int) -> void:
 	hat_texture.texture = hat.texture
 
 	if index in save.hats.hats_index_owned:
+		buy_button.icon = equip_hat_texture
 		buy_button.text = "Wear"
 		hat_price_label.text = "Owned"
 
 	else:
+		buy_button.icon = coin_texture
 		buy_button.text = "Buy"
 		hat_price_label.text = str(hat.price)
 
