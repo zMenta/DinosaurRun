@@ -1,13 +1,11 @@
-* TODO Dinossaur Run [20%]
-** [ ] Bugs
-    - [-] Coins Pickup
-        Some coins are being picked up wrong. Sometimes they count as 4x coins instead of 3 coins. Check the pattern coin scene.
-        I think it might be that the coins are close together, maybe glitching the area2D body entered trigger.
+* TODO Dinossaur Run [60%]
+** [X] Bugs
+     - [X] Coins Pickup:Some coins are being picked up wrong. Sometimes they count as 4x coins instead of 3 coins. Check the pattern coin scene.I think it might be that the coins are close together, maybe glitching the area2D body entered trigger.
 
 
-** [ ] Misc [0/1]
-*** TODO Add the new hats to the game.
-
+** [X] Content [2/2]
+*** DONE Add the new hats
+*** DONE Add new coin patterns
 
 ** DONE Hat System [2/2]
 *** DONE Hat sprites
