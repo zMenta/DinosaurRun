@@ -75,8 +75,10 @@ _global_script_class_icons={
 [application]
 
 config/name="DinosaurRun"
+config/description="Game"
 run/main_scene="res://main/Main.tscn"
 config/icon="res://scenes/player/assets/Dino.png"
+config/windows_native_icon="res://scenes/player/assets/Dino.png"
 
 [autoload]
 
