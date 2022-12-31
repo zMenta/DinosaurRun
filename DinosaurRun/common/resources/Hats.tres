@@ -1,26 +1,58 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=19 format=2]
 
 [ext_resource path="res://common/resources/Hats.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/assets/hats/hat1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/player/assets/hats/hat2.png" type="Texture" id=3]
 [ext_resource path="res://common/resources/HatItem.gd" type="Script" id=4]
-
-[sub_resource type="Resource" id=1]
-script = ExtResource( 4 )
-price = 0
+[ext_resource path="res://scenes/player/assets/hats/hat3.png" type="Texture" id=5]
+[ext_resource path="res://scenes/player/assets/hats/hat4.png" type="Texture" id=6]
+[ext_resource path="res://scenes/player/assets/hats/hat5.png" type="Texture" id=7]
+[ext_resource path="res://scenes/player/assets/hats/hat6.png" type="Texture" id=8]
+[ext_resource path="res://scenes/player/assets/hats/hat8.png" type="Texture" id=9]
+[ext_resource path="res://scenes/player/assets/hats/hat7.png" type="Texture" id=10]
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 4 )
 texture = ExtResource( 2 )
-price = 350
+price = 150
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 4 )
+texture = ExtResource( 5 )
+price = 320
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 4 )
+texture = ExtResource( 6 )
+price = 450
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 4 )
 texture = ExtResource( 3 )
 price = 850
 
+[sub_resource type="Resource" id=6]
+script = ExtResource( 4 )
+texture = ExtResource( 7 )
+price = 650
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 4 )
+texture = ExtResource( 8 )
+price = 725
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 4 )
+texture = ExtResource( 10 )
+price = 975
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 4 )
+texture = ExtResource( 9 )
+price = 1175
+
 [resource]
 script = ExtResource( 1 )
-current_hat_index = 0
-hats = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]
+current_hat_index = 1
+hats = [ SubResource( 2 ), SubResource( 4 ), SubResource( 5 ), SubResource( 3 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ]
 hats_index_owned = [ 0 ]
