@@ -4,22 +4,26 @@
 [ext_resource path="res://scenes/world/coin/coin_patterns/CoinPattern3Straight.gd" type="Script" id=2]
 
 [node name="Coin3Straight" type="Node2D"]
+position = Vector2( -28, 0 )
 script = ExtResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 4, 0 )
+position = Vector2( 28, 0 )
 scale = Vector2( 4.21261, -1.1697 )
 
 [node name="CoinsGroup" type="Node2D" parent="."]
 position = Vector2( 0, -20 )
 
-[node name="Coin" parent="CoinsGroup" instance=ExtResource( 1 )]
-position = Vector2( -32, 20 )
+[node name="Coin7" parent="CoinsGroup" instance=ExtResource( 1 )]
+position = Vector2( 8, -20 )
 
-[node name="Coin2" parent="CoinsGroup" instance=ExtResource( 1 )]
-position = Vector2( 0, 20 )
+[node name="Coin8" parent="CoinsGroup" instance=ExtResource( 1 )]
+position = Vector2( 48, -20 )
 
 [node name="Coin3" parent="CoinsGroup" instance=ExtResource( 1 )]
-position = Vector2( 32, 20 )
+position = Vector2( 8, 20 )
+
+[node name="Coin4" parent="CoinsGroup" instance=ExtResource( 1 )]
+position = Vector2( 48, 20 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

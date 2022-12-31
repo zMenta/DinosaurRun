@@ -16,10 +16,16 @@ position = Vector2( 0, -20 )
 [node name="Coin" parent="CoinsGroup" instance=ExtResource( 1 )]
 position = Vector2( -32, 20 )
 
+[node name="Coin4" parent="CoinsGroup" instance=ExtResource( 1 )]
+position = Vector2( -4, -12 )
+
 [node name="Coin2" parent="CoinsGroup" instance=ExtResource( 1 )]
-position = Vector2( 0, 20 )
+position = Vector2( 64, -12 )
 
 [node name="Coin3" parent="CoinsGroup" instance=ExtResource( 1 )]
-position = Vector2( 32, 20 )
+position = Vector2( 28, 20 )
+
+[node name="Coin5" parent="CoinsGroup" instance=ExtResource( 1 )]
+position = Vector2( 92, 20 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
