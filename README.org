@@ -1,7 +1,7 @@
 * DinosaurRun
+** A game inspired by the google offline dinosaur game. Made with Godot 3
 
 #+attr_html: :alt  :align center :class img
 [[./screenshots/image.png]]
 
-
-A game inspired by the google offline dinosaur game. Made with Godot 3
+[[./screenshots/image2.png]]
