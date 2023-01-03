@@ -36,6 +36,7 @@ func _ready():
 
 
 func _on_CheckBox_toggled(button_pressed:bool) -> void:
+	resolution_options_button.disabled = button_pressed
 	OS.window_fullscreen = button_pressed
 	save.game_settings.fullscreen = button_pressed
 
