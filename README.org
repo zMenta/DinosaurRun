@@ -1,0 +1,7 @@
+* DinosaurRun
+
+#+attr_html: :alt  :align center :class img
+[[https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2021%2F06%2F07%2Fmultimedia%2F07xp-oz-dinosaur-02%2F07xp-oz-dinosaur-02-facebookJumbo.jpg&f=1&nofb=1&ipt=a2ef40b010c98d172a1ce6966bc7f507c556bdbd1c2faa8b51b36c3f5798cb68&ipo=images][title]]
+
+
+A game inspired by the google offline dinosaur game. Made with Godot 3
