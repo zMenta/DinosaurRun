@@ -1,5 +1,6 @@
 * DinosaurRun
 ** A game inspired by the offline dinosaur game. Made with Godot 3
+[[https://zmenta.itch.io/dinosaur-run][Download Link]]
 
 #+attr_html: :alt  :align center :class img
 [[./screenshots/image.png]]
